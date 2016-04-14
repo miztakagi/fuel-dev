@@ -1,0 +1,197 @@
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP Fatal error:  Call to undefined method Common::get() in /vagrant/fuel/fuel/app/classes/controller/index.php on line 33
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP   3. Fuel\Core\Request->execute() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP   4. ReflectionMethod->invokeArgs() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:12:45 Asia/Tokyo] PHP   5. Controller_Index->action_index() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP Fatal error:  Call to undefined function dump() in /vagrant/fuel/fuel/app/classes/controller/index.php on line 34
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP   3. Fuel\Core\Request->execute() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP   4. ReflectionMethod->invokeArgs() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:13:29 Asia/Tokyo] PHP   5. Controller_Index->action_index() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP Fatal error:  Call to undefined function dump() in /vagrant/fuel/fuel/app/classes/controller/index.php on line 34
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP   3. Fuel\Core\Request->execute() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP   4. ReflectionMethod->invokeArgs() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:14:49 Asia/Tokyo] PHP   5. Controller_Index->action_index() /vagrant/fuel/fuel/core/classes/request.php:454
+[14-Apr-2016 23:32:22 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /vagrant/fuel/fuel/app/config/development/constant.php on line 8
+[14-Apr-2016 23:32:22 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:32:22 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:32:22 Asia/Tokyo] PHP   2. require() /vagrant/fuel/public/index.php:89
+[14-Apr-2016 23:33:57 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /vagrant/fuel/fuel/app/config/development/constant.php on line 8
+[14-Apr-2016 23:33:57 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:33:57 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:33:57 Asia/Tokyo] PHP   2. require() /vagrant/fuel/public/index.php:89
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:13 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:56:28 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:00 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:57:13 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog_Blog in /vagrant/fuel/fuel/app/classes/controller/blog.php on line 0
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:44 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog_Blog in /vagrant/fuel/fuel/app/classes/controller/blog.php on line 0
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:58:52 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:10 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP Stack trace:
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[14-Apr-2016 23:59:22 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:06 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:07 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:07 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:25 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:46 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP Fatal error:  Cannot redeclare class Controller_Blog in /vagrant/fuel/fuel/app/classes/controller/blog/blog.php on line 0
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   3. Fuel\Core\Request::forge() /vagrant/fuel/public/index.php:71
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   4. Fuel\Core\Request->__construct() /vagrant/fuel/fuel/core/classes/request.php:69
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   5. Fuel\Core\Router::process() /vagrant/fuel/fuel/core/classes/request.php:311
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   6. Fuel\Core\Router::parse_match() /vagrant/fuel/fuel/core/classes/router.php:233
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   7. Fuel\Core\Router::parse_segments() /vagrant/fuel/fuel/core/classes/router.php:258
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   8. Fuel\Core\Router::check_class() /vagrant/fuel/fuel/core/classes/router.php:291
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP   9. class_exists() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
+[15-Apr-2016 00:00:47 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
