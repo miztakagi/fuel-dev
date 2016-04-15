@@ -1,0 +1,69 @@
+.hg__header { -moz-grid-area: header; -webkit-grid-area: header; grid-area: header; }
+.hg__footer { -moz-grid-area: footer; -webkit-grid-area: footer; grid-area: footer; }
+.hg__main { -moz-grid-area: main; -webkit-grid-area: main; grid-area: main; }
+.hg__left { -moz-grid-area: navigation; -webkit-grid-area: navigation; grid-area: navigation; }
+.hg__right { -moz-grid-area: ads; -webkit-grid-area: ads; grid-area: ads; }
+
+.hg {
+    -moz-display: grid; -webkit-display: grid; display: grid;
+    -moz-grid-template-areas:   "header header header"
+                                 "navigation main ads"
+                                 "footer footer footer";
+    -webkit-grid-template-areas: "header header header"
+                                "navigation main ads"
+                                "footer footer footer";
+    grid-template-areas: "header header header"
+                        "navigation main ads"
+                        "footer footer footer";
+    -moz-grid-template-columns: 150px 1fr 150px;
+    -webkit-grid-template-columns: 150px 1fr 150px;
+    grid-template-columns: 150px 1fr 150px;
+    -moz-grid-template-rows:    100px 
+                                1fr
+                                30px;
+    -webkit-grid-template-rows: 100px 
+                                1fr
+                                30px;
+    grid-template-rows: 100px 
+                        1fr
+                        30px;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+    .hg {
+        -moz-grid-template-areas: "header"
+                                 "navigation"
+                                 "main"
+                                 "ads"
+                                 "footer";
+        -webkit-grid-template-areas: "header"
+                                    "navigation"
+                                    "main"
+                                    "ads"
+                                    "footer";
+        grid-template-areas: "header"
+                            "navigation"
+                            "main"
+                            "ads"
+                            "footer";
+        -moz-grid-template-columns: 100%;
+        -webkit-grid-template-columns: 100%;
+        grid-template-columns: 100%;
+        -moz-grid-template-rows:    100px
+                                    50px
+                                    1fr
+                                    50px
+                                    30px;
+        -webkit-grid-template-rows: 100px
+                                    50px
+                                    1fr
+                                    50px
+                                    30px;
+        grid-template-rows: 100px
+                            50px
+                            1fr
+                            50px
+                            30px;
+    }
+}

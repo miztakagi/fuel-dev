@@ -195,3 +195,34 @@
 [15-Apr-2016 00:00:47 Asia/Tokyo] PHP  10. spl_autoload_call() /vagrant/fuel/fuel/core/classes/router.php:332
 [15-Apr-2016 00:00:47 Asia/Tokyo] PHP  11. Fuel\Core\Autoloader::load() /vagrant/fuel/fuel/core/classes/router.php:332
 [15-Apr-2016 00:00:47 Asia/Tokyo] PHP  12. Fuel\Core\Autoloader::init_class() /vagrant/fuel/fuel/core/classes/autoloader.php:283
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP Fatal error:  Call to undefined function dump() in /vagrant/fuel/fuel/app/classes/controller/holy.php on line 23
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP   2. {closure:/vagrant/fuel/public/index.php:54-83}() /vagrant/fuel/public/index.php:92
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP   3. Fuel\Core\Request->execute() /vagrant/fuel/public/index.php:71
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP   4. ReflectionMethod->invokeArgs() /vagrant/fuel/fuel/core/classes/request.php:454
+[15-Apr-2016 09:37:34 Asia/Tokyo] PHP   5. Controller_Holy->action_index() /vagrant/fuel/fuel/core/classes/request.php:454
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ')' in /vagrant/fuel/fuel/app/views/template.php on line 63
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   2. Fuel\Core\Response->__toString() /vagrant/fuel/public/index.php:113
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   3. Fuel\Core\View->__toString() /vagrant/fuel/public/index.php:382
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   4. Fuel\Core\View->render() /vagrant/fuel/fuel/core/classes/view.php:213
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   5. Fuel\Core\View->process_file() /vagrant/fuel/fuel/core/classes/view.php:631
+[15-Apr-2016 12:00:08 Asia/Tokyo] PHP   6. Fuel\Core\View->Fuel\Core\{closure}() /vagrant/fuel/fuel/core/classes/view.php:260
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ')' in /vagrant/fuel/fuel/app/views/template.php on line 63
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   2. Fuel\Core\Response->__toString() /vagrant/fuel/public/index.php:113
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   3. Fuel\Core\View->__toString() /vagrant/fuel/public/index.php:382
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   4. Fuel\Core\View->render() /vagrant/fuel/fuel/core/classes/view.php:213
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   5. Fuel\Core\View->process_file() /vagrant/fuel/fuel/core/classes/view.php:631
+[15-Apr-2016 12:00:32 Asia/Tokyo] PHP   6. Fuel\Core\View->Fuel\Core\{closure}() /vagrant/fuel/fuel/core/classes/view.php:260
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ';' in /vagrant/fuel/fuel/app/views/template.php on line 59
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP Stack trace:
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   1. {main}() /vagrant/fuel/public/index.php:0
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   2. Fuel\Core\Response->__toString() /vagrant/fuel/public/index.php:113
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   3. Fuel\Core\View->__toString() /vagrant/fuel/public/index.php:382
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   4. Fuel\Core\View->render() /vagrant/fuel/fuel/core/classes/view.php:213
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   5. Fuel\Core\View->process_file() /vagrant/fuel/fuel/core/classes/view.php:631
+[15-Apr-2016 12:01:07 Asia/Tokyo] PHP   6. Fuel\Core\View->Fuel\Core\{closure}() /vagrant/fuel/fuel/core/classes/view.php:260

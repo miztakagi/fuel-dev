@@ -32,8 +32,6 @@
 	<!-- CONTAINER -->
 	<div class="container">
 		<h1><?php echo $page_title; ?></h1>
-		<?=Asset::img('test.jpg', array('id'=>'kanna', 'class'=>'uk-img', 'style'=>'height:300px'));?>
-		<?=Asset::img('icon/icon.jpg', array('id'=>'leg', 'class'=>'uk-img', 'style'=>'height:300px')); ?>
 		<div class="welcome_user">
 			Welcome <?php echo $username; ?>
 			<hr>
@@ -48,12 +46,9 @@
 
 				echo html_tag('a', array(
 						'href' => 'http://somedomain.com/',
-						'class' => 'my_class'),
+						'class' => 'my_class',
+						'target' => '_blank'),
 					'Link title'
-				);
-				echo array_to_attr(array(
-    			'href' => 'http://somedomain.com/',
-    			'class' => 'my_class')
 				);
 			?>
 			<hr>
