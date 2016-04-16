@@ -1,0 +1,167 @@
+/*---- COLORS ----*/
+
+@color01: #00c0cc;
+@color02: #3bc4cc;
+@color03: #6cc7cc;
+@color04: #9dc9cc;
+@color05: #d9e5e5;
+@color06: #0078d7;
+@color07: #4496d7;
+@color08: #a1bfd7;
+@color09: #a9c7df;
+@color10: #d9e0e5;
+@color11: #d7d663;
+@color12: #dfdea9;
+@color13: #e5e5d9;
+
+@cgrad01: #00a8b3;
+@cgrad02: #14afb9;
+@cgrad03: #27b6be;
+@cgrad04: #3bbcc4;
+@cgrad05: #4ec3ca;
+@cgrad06: #62cad0;
+@cgrad07: #76d0d6;
+@cgrad08: #89d7dc;
+@cgrad09: #9ddee2;
+@cgrad10: #b1e4e8;
+@cgrad11: #c4ebed;
+@cgrad12: #d8f2f3;
+@cgrad13: #ebf8f9;
+@white: #ffffff;
+@gray: #e9e9e9;
+@black: rgba(0,0,0,0.8);
+
+@button-background:                      @color01;
+@button-color:                           @white;
+@button-hover-background:                @color03;
+@button-hover-color:                     @white;
+@button-active-background:               @color01;
+@button-active-color:                    @white;
+@button-disabled-background:             @color04;
+@button-disabled-color:                  @gray;
+@button-link-color:                      @color01;
+@button-link-hover-color:                @color03;
+@button-link-hover-text-decoration:      underline;
+@button-link-disabled-color:             @color04;
+
+/*---- FONT ----*/
+
+@font_family_01: "Roboto", Helvetica, Arial, sans-serif;
+@font_family_02: "Roboto", Helvetica, Arial, sans-serif;
+
+/*---- BASE ----*/
+
+html {
+  background-color: #ffffff;
+}
+body {
+  color: @cgrad01;
+  font-family: @font_family_01;
+}
+a, a:link, a:visited {
+  color: @cgrad01;
+}
+a:hover, a:active {
+  color: @cgrad02;
+}
+.button:hover {
+  border-color: @cgrad01;
+  color: @cgrad01;
+}
+.input:hover {
+  border-color: @cgrad01;
+}
+.input:focus {
+  border-color: @cgrad01;
+}
+span#subtitle1 {
+  display: inline-block;
+  margin-top: 10px;
+}
+span#subtitle2 {
+  display: none;
+}
+
+/*---- BUTTON ----*/
+
+.uk-button {
+    color: @white;
+    background: @button-background;
+    text-shadow: none;
+}
+a.uk-button, a:link.uk-button, a:visited.uk-button {
+	color: @white;
+}
+.uk-button:hover,
+.uk-button:focus {
+    background-color: @button-hover-background;
+    color: @button-hover-color;
+}
+.uk-button:active,
+.uk-button.uk-active {
+    background-color: @button-active-background;
+    color: @button-active-color;
+}
+.uk-button:disabled {
+    background-color: @button-disabled-background;
+    color: @button-disabled-color;
+}
+.uk-button-link { color: @button-link-color; }
+.uk-button-link:hover,
+.uk-button-link:focus,
+.uk-button-link:active,
+.uk-button-link.uk-active {
+    color: @button-link-hover-color;
+    text-decoration: @button-link-hover-text-decoration;
+}
+.uk-button-link:disabled { color: @button-link-disabled-color; }
+
+/*---- MENUE ----*/
+
+.uk-navbar {
+	padding: 5px 0;
+	background: fade(@cgrad01, 60%);
+	border: none;
+	border-bottom: 4px solid fade(@cgrad01, 70%);
+	txt-align: left;
+}
+.uk-navbar-content {
+	padding: 0 10px;
+}
+.uk-navbar-brand {
+	padding: 0 10px 0 0;
+	display: inline-block;
+	float: none;
+}
+.uk-navbar-toggle:hover {
+	color: rgba(0, 168, 179, 75%);
+}
+.uk-offcanvas-bar {
+	width: 180px;
+}
+
+/*---- SUB-MENUES ----*/
+
+ul.uk-nav-offcanvas {
+	li {
+		text-align: left !important;
+	}
+	.uk-nav-sub li {
+			padding: 3px 0 3px 8px;
+	}
+	.uk-nav-divider {
+		border: none;
+		height: 3px;
+		&.short {
+			height: 2px;
+			width: 80%;
+		}
+	}
+}
+
+/*---- MAIN ----*/
+.container {
+	&.main {
+		margin: 10px;
+	}
+}

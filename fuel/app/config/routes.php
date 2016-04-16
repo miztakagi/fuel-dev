@@ -2,7 +2,7 @@
 return array(
 	//'_root_'  => 'index',  // The default route
 	'welcome'  => 'index',  // The default route
-	''   => 'index',
+	'_root_'   => 'index',
 	'blog'   => 'blog/blog',
 	'about'   => 'site/about',
 	'contact' => 'contact/form',

@@ -41,7 +41,7 @@ return array(
 	 *
 	 * Set this to 'index.php if you don't use URL rewriting
 	 */
-	// 'index_file' => false,
+	'index_file' => false,
 
 	// 'profiling'  => false,
 
@@ -92,8 +92,8 @@ return array(
 	 * server_gmt_offset	in seconds the server offset from gmt timestamp when time() is used
 	 * default_timezone		optional, if you want to change the server's default timezone
 	 */
-	// 'server_gmt_offset'  => 0,
-	// 'default_timezone'   => null,
+	'server_gmt_offset'  => 3600 * 9,
+	'default_timezone'   => 'Asia/Tokyo',
 
 	/**
 	 * Logging Threshold.  Can be set to any of the following:

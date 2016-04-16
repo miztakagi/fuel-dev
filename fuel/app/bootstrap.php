@@ -7,7 +7,7 @@ require COREPATH.'bootstrap.php';
 	// Example: 'View' => APPPATH.'classes/view.php',
 
 	// 共通関数の読み込み
-	'Common' => APPPATH.'classes/controller/common.php',
+	//'Common' => APPPATH.'classes/controller/common/common.php',
 ));
 
 // Register the autoloader
@@ -23,11 +23,15 @@ require COREPATH.'bootstrap.php';
  */
 \Fuel::$env = \Arr::get($_SERVER, 'FUEL_ENV', \Arr::get($_ENV, 'FUEL_ENV', \Fuel::DEVELOPMENT));
 
-
-
 // Initialize the framework with the config file.
 \Fuel::init('config.php');
 
+/**
+ * 2016.04.16 miz.takagi
+ */
+
 // 定数設定の読み込み
 //require APPPATH.'config/'.Fuel::$env.'/define.php';
-require APPPATH.'config/'.Fuel::$env.'/constant.php';
+require_once APPPATH.'classes/controller/common/constant.php';
+// 共通関数の読み込み
+require_once APPPATH.'classes/controller/common/common2.php';

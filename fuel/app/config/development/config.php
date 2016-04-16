@@ -41,7 +41,7 @@ return array(
 	 *
 	 * Set this to 'index.php if you don't use URL rewriting
 	 */
-	// 'index_file' => false,
+	'index_file' => false,
 
 	// 'profiling'  => false,
 
@@ -77,9 +77,9 @@ return array(
 	/**
 	 * Localization & internationalization settings
 	 */
-	'language'           => 'ja', // Default language
+	'language'           => 'en', // Default language
 	'language_fallback'  => 'en', // Fallback language when file isn't available for default language
-	'locale'             => 'ja_JP', // PHP set_locale() setting, null to not set
+	'locale'             => 'en_US', // PHP set_locale() setting, null to not set
 
 	/**
 	 * Internal string encoding charset
@@ -113,17 +113,17 @@ return array(
 	 * Security settings
 	 */
 	'security' => array(
-		// 'csrf_autoload'            => false,
-		// 'csrf_autoload_methods'    => array('post', 'put', 'delete'),
-		// 'csrf_bad_request_on_fail' => false,
-		// 'csrf_auto_token'          => false,
-		// 'csrf_token_key'           => 'fuel_csrf_token',
-		// 'csrf_expiration'          => 0,
+		'csrf_autoload'            => true,
+		'csrf_autoload_methods'    => array('post', 'put', 'delete'),
+		'csrf_bad_request_on_fail' => false,
+		'csrf_auto_token'          => true,
+		'csrf_token_key'           => 'nonovel_csrf_token',
+		'csrf_expiration'          => 0,
 
 		/**
 		 * A salt to make sure the generated security tokens are not predictable
 		 */
-		// 'token_salt'            => 'put your salt value here to make the token more secure',
+		'token_salt'            => 'cIn9miaB1qUa7sHrral1Woulm7Oc7wya',
 
 		/**
 		 * Allow the Input class to use X headers when present
@@ -306,7 +306,10 @@ return array(
 		 * add it like 'session' => 'auth'.
 		 * If you don't want the config in a group use null as groupname.
 		 */
-		// 'config'  => array(),
+		// 'config'  => array(
+		// 	'session',
+		// 	'constant',
+		// ),
 
 		/**
 		 * Language files to autoload

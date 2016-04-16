@@ -1,4 +1,3 @@
-/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -51,14 +50,7 @@
                 var select = $this.select[0], fn = function(){
 
                     try {
-                        if($this.options.target === 'input')
-                        {
-                            $this.target.val(select.options[select.selectedIndex].text);
-                        }
-                        else
-                        {
-                            $this.target.text(select.options[select.selectedIndex].text);
-                        }
+                        $this.target.text(select.options[select.selectedIndex].text);
                     } catch(e) {}
 
                     $this.element[$this.select.val() ? 'addClass':'removeClass']($this.options.activeClass);

@@ -1,4 +1,3 @@
-/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -63,7 +62,7 @@
                 // filter
                 this.controls.on('click', '[data-uk-filter]', function(e){
                     e.preventDefault();
-                    $this.filter(UI.$(this).attr('data-uk-filter'));
+                    $this.filter(UI.$(this).data('ukFilter'));
                 });
 
                 // sort

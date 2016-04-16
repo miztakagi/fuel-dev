@@ -20,17 +20,18 @@
 		<!-- CSS -->
 		<?=Asset::css('uikit.css')?>
 		<?=Asset::css('style.css')?>
-	<style>
-		body { margin: 5px 10px; }
-	</style>
-</head>
+		<!-- JAVASCRIPT -->
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+		<?php echo Asset::js('uikit.js'); ?>
+		<?php echo Asset::js('script1.js'); ?>
+	</head>
 <body>
 	<!-- HEADER NAVI -->
 	<?php echo $navi; ?>
 	<!-- END HEADER NAVI -->
 
 	<!-- CONTAINER -->
-	<div class="container">
+	<div class="container main">
 		<h1><?php echo $page_title; ?></h1>
 		<div class="welcome_user">
 			Welcome <?php echo $username; ?>
@@ -83,9 +84,6 @@
 	<footer class="footer">
     &copy; Copyright <?php echo date('Y');?> <?php echo $site_title; ?>
 	</footer>
-	<!-- JAVASCRIPT -->
-	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-	<?php echo Asset::js('uikit.min.js'); ?>
-	<?php echo Asset::js('script1.js'); ?>
+
 </body>
 </html>
