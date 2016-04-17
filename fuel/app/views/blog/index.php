@@ -8,10 +8,10 @@
 
 <ul class="card_lit chew-row chew-row--gutter chew-row--col-4 chew-row--card-min-50 chew-row--card-max-300">
     <li class="chew-cell">
-        <div class="chew-card"><?=Asset::img('test.jpg', array('id'=>'kanna', 'class'=>'uk-img'));?></div>
+        <div class="chew-card"><?=Asset::img('sample/test.jpg', array('id'=>'kanna', 'class'=>'uk-img'));?></div>
     </li>
     <li class="chew-cell">
-        <div class="chew-card"><?=Asset::img('icon/icon.jpg', array('id'=>'leg', 'class'=>'uk-img')); ?></div>
+        <div class="chew-card"><?=Asset::img('sample/icon.jpg', array('id'=>'leg', 'class'=>'uk-img')); ?></div>
     </li>
     <li class="chew-cell">
         <div class="chew-card">3 chewing-grid have some workarounds to improve compatibility:</div>

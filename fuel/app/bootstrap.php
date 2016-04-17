@@ -8,6 +8,8 @@ require COREPATH.'bootstrap.php';
 
 	// 共通関数の読み込み
 	//'Common' => APPPATH.'classes/controller/common/common.php',
+	// 定数設定の読み込み
+	//'Const' => APPPATH.'classes/controller/common/constant.php',
 ));
 
 // Register the autoloader
@@ -31,7 +33,6 @@ require COREPATH.'bootstrap.php';
  */
 
 // 定数設定の読み込み
-//require APPPATH.'config/'.Fuel::$env.'/define.php';
 require_once APPPATH.'classes/controller/common/constant.php';
 // 共通関数の読み込み
-require_once APPPATH.'classes/controller/common/common2.php';
+require_once APPPATH.'classes/controller/common/common.php';

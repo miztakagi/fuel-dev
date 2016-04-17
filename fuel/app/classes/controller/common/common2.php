@@ -19,6 +19,49 @@ class Common extends Controller
 		}
 	}
 
+	public static function def($val)
+	{
+		switch($val){
+			case '_DEBUG':
+				return 1;
+			break;
+			case '_OPEN':
+				return 1;
+			break;
+			case '_DOMAIN':
+				return $_SERVER["SERVER_NAME"];
+			break;
+			case '_ASSETS':
+				return '/fuel/public/assets/';
+			break;
+			case '_SITENAME':
+				return 'ののべる.jp';
+			break;
+			case '_MENU_':
+				return array(
+					'見つける',
+					'書く人',
+					'使い方',
+					'会員登録',
+					'サイト案内'
+				);
+			break;
+			case '_COPY_':
+				return array(
+					'物語を見つけよう！',
+					'人生はいつだって物語を欲している',
+					'わたしだけの「面白さ」を探しに……',
+					'面白さは、自分で決める！',
+					'まだ見たことのない世界へ……',
+					'値段は読んでから決める！',
+					'心はいつでも物語を求めている…'
+				);
+			break;
+			default:
+			break;
+		}
+	}
+
 	// レイアウトtemplateに各パーツをセットする
 	// @params :: $v: Viewオブジェクト $d: データ配列
 	public static function setLayout($v, $d)

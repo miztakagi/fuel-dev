@@ -12,22 +12,21 @@ class Controller_Blog extends Controller_Template
 		Log::error('controller='.$request->controller.' action='.$request->action);
 	}
 
-	public function action_blog()
+	public function action_index()
 	{
 		$data = new stdClass();
 		$data->subnav = array('blog' => 'active' );
+		$data->page_copy = Common::setCopy();
 
-		$this->template = View::forge('template/template');
-
-		$this->template->iconified = _ASSET_."img/icon/iconified";
-		$this->template->page_title = 'Home';
-		$this->template->site_title = 'My Website';
+		$this->template->iconified = _ASSET."img/icon/iconified";
+		$this->template->page_title = 'ブログ';
 		$this->template->username = 'Joe14';
 		$this->template->title = 'Blog &raquo; Blog';
 
-		$this->template->navi = View::forge('common/navi');
+		$this->template->navi = View::forge('common/navi', $data);
+		$this->template->footer = View::forge('common/footer', $data);
 
-		$this->template->content = View::forge('blog/blog', $data);
+		$this->template->content = View::forge('blog/index', $data);
 	}
 
 	public function after($response)

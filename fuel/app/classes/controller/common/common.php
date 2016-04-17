@@ -12,6 +12,7 @@ class Common extends Controller
 {
 	// var_dumpのエイリアス
 	// 開発モードでのみ出力する
+	// @params :: $data: var_dumpさせたい値
 	public static function dump($data)
 	{
 		if(Fuel::$env == "development"){
@@ -36,5 +37,12 @@ class Common extends Controller
 		// Viewオブジェクトに格納して戻す
 		return $v;
 	}
+
+	public static function setCopy()
+	{
+		$key = array_rand(_COPY_);
+		return _COPY_[$key];
+	}
+
 
 }

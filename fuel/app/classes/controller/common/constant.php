@@ -11,11 +11,11 @@
 const CONSTANT = 'EXAMPLE';
 
 /* site status */
-const _DEBUG_ = 1;
-const _OPEN_ = 1;
-define('_DOMAIN_', $_SERVER['SERVER_NAME']);
-const _SITENAME_ = 'ののべる.jp';
-const _ASSET_ = '/fuel/public/assets/';
+define('_DEBUG', 1);
+define('_OPEN', 1);
+define('_DOMAIN', $_SERVER['SERVER_NAME']);
+define('_SITENAME', 'ののべる.jp');
+define('_ASSET', DOCROOT.'/assets/');
 
 /* headers */
 const _MENU_ = array(

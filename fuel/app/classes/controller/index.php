@@ -30,11 +30,11 @@ class Controller_Index extends Controller
 	 */
 	public function action_index()
 	{
-		Common::dump(_SITENAME_); // dump() はDEVELOPMENT の時のみ出力される
+		Common::dump(_DOMAIN); // dump() はDEVELOPMENT の時のみ出力される
 
 		//assign variables
 		$data = array();
-		$data['iconified'] = _ASSET_."img/icon/iconified";
+		$data['iconified'] = _ASSET."img/icon/iconified";
 		$data['page_title'] = 'Home';
 		$data['site_title'] = 'My Website';
 		$data['username'] = 'Joe14';
@@ -57,6 +57,13 @@ class Controller_Index extends Controller
 		return $view;
 
 		//return Response::forge(View::forge('index/index'));
+	}
+
+	public function action_error()
+	{
+		$data['title'] = 'ページが見つかりません';
+		return View::forge('errors/404', $data);
+		//return Response::forge(Presenter::forge('error/404'), 404);
 	}
 
 	static function setData(){

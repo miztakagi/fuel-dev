@@ -75,9 +75,9 @@ a:visited.uk-button {
 /*---- MENUE ----*/
 .uk-navbar {
   padding: 5px 0;
-  background: rgba(0, 192, 204, 0.75);
+  background: rgba(0, 168, 179, 0.6);
   border: none;
-  border-bottom: 5px solid rgba(0, 192, 204, 0.9);
+  border-bottom: 4px solid rgba(0, 168, 179, 0.7);
   txt-align: left;
 }
 .uk-navbar-content {
@@ -95,8 +95,8 @@ a:visited.uk-button {
   width: 180px;
 }
 .copy {
-  color: #ffffff;
-  font-size: 1.0em;
+  color: @white;
+  font-size: 0.9rem;
   -moz-text-shadow: 1px 1px 1px rgba(0, 168, 179, 0.7);
   -webkit-text-shadow: 1px 1px 1px rgba(0, 168, 179, 0.7);
   -ms-text-shadow: 1px 1px 1px rgba(0, 168, 179, 0.7);
@@ -116,16 +116,6 @@ ul.uk-nav-offcanvas .uk-nav-divider {
 ul.uk-nav-offcanvas .uk-nav-divider.short {
   height: 2px;
   width: 80%;
-}
-/*---- LOGIN FORM ----*/
-#login_form.uk-modal .uk-modal-header {
-  background-color: #00c0cc;
-}
-#login_form.uk-modal .uk-modal-header h2 {
-  color: #ffffff;
-}
-#login_form.uk-modal .uk-close:after {
-  color: #ffffff;
 }
 /*---- MAIN ----*/
 .container.main {
