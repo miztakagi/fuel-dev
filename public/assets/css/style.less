@@ -1,35 +1,114 @@
 /*---- COLORS ----*/
 
-@color01: #00c0cc;
-@color02: #3bc4cc;
-@color03: #6cc7cc;
-@color04: #9dc9cc;
-@color05: #d9e5e5;
-@color06: #0078d7;
-@color07: #4496d7;
-@color08: #a1bfd7;
-@color09: #a9c7df;
-@color10: #d9e0e5;
-@color11: #d7d663;
-@color12: #dfdea9;
-@color13: #e5e5d9;
-
-@cgrad01: #00a8b3;
-@cgrad02: #14afb9;
-@cgrad03: #27b6be;
-@cgrad04: #3bbcc4;
-@cgrad05: #4ec3ca;
-@cgrad06: #62cad0;
-@cgrad07: #76d0d6;
-@cgrad08: #89d7dc;
-@cgrad09: #9ddee2;
-@cgrad10: #b1e4e8;
-@cgrad11: #c4ebed;
-@cgrad12: #d8f2f3;
-@cgrad13: #ebf8f9;
-@white: #ffffff;
-@gray: #e9e9e9;
+/* Linear- colors */
+@color01 : #00c5a3;
+@color02 : #11c9a9;
+@color03 : #22cdaf;
+@color04 : #33d1b6;
+@color05 : #44d5bc;
+@color06 : #55d9c2;
+@color07 : #66dcc8;
+@color08 : #77e0ce;
+@color09 : #88e4d4;
+@color10 : #99e8da;
+@color11 : #aaece0;
+@color12 : #bbf0e7;
+@color13 : #ccf3ed;
+@color14 : #ddf7f3;
+@color15 : #eefbf9;
+/* Linear+ colors */
+@cgra101 : #00b898;
+@cgra102 : #00ab8d;
+@cgra103 : #009e83;
+@cgra104 : #009178;
+@cgra105 : #00846d;
+@cgra106 : #007662;
+@cgra107 : #006957;
+@cgra108 : #005c4c;
+@cgra109 : #004f41;
+@cgra110 : #004236;
+@cgra111 : #00352c;
+@cgra112 : #002721;
+@cgra113 : #001a16;
+@cgra114 : #000d0b;
+/* Radial- colors */
+@cgra201 : #0d98c9;
+@cgra202 : #1b89cd;
+@cgra203 : #2a7dd1;
+@cgra204 : #3970d5;
+@cgra205 : #485dd9;
+@cgra206 : #6058dc;
+@cgra207 : #8669e0;
+@cgra208 : #a77ae4;
+@cgra209 : #c38be8;
+@cgra210 : #e09dec;
+@cgra211 : #f0b0e7;
+@cgra212 : #f3c3e1;
+@cgra213 : #f7d6e2;
+@cgra214 : #fbeaec;
+/* radial+ colors */
+@cgra301 : #0c8bb8;
+@cgra302 : #1773ab;
+@cgra303 : #205f9e;
+@cgra304 : #274c91;
+@cgra305 : #2c3884;
+@cgra306 : #342f76;
+@cgra307 : #3f3169;
+@cgra308 : #43315c;
+@cgra309 : #422f4f;
+@cgra310 : #3f2c42;
+@cgra311 : #352733;
+@cgra312 : #272024;
+@cgra313 : #1a1718;
+@cgra314 : #0d0c0c;
+/* Counter- colors */
+@cgra401 : #0dc999;
+@cgra402 : #1bcd93;
+@cgra403 : #2ad18e;
+@cgra404 : #39d58b;
+@cgra405 : #48d97e;
+@cgra406 : #58dc6a;
+@cgra407 : #7be069;
+@cgra408 : #a9e47a;
+@cgra409 : #d0e88b;
+@cgra410 : #ece99d;
+@cgra411 : #f0dbb0;
+@cgra412 : #f3d8c3;
+@cgra413 : #f7e0d6;
+@cgra414 : #fbedea;
+/* Counter+ colors */
+@cgra501 : #0cb88c;
+@cgra502 : #17ab7a;
+@cgra503 : #209e6b;
+@cgra504 : #27915e;
+@cgra505 : #2c844c;
+@cgra506 : #2f7639;
+@cgra507 : #3a6931;
+@cgra508 : #445c31;
+@cgra509 : #474f2f;
+@cgra510 : #42412c;
+@cgra511 : #353027;
+@cgra512 : #272320;
+@cgra513 : #1a1817;
+@cgra514 : #0d0c0c;
+/* Gray colors */
+@cgray01 : #93a7a3;
+@cgray02 : #9caeab;
+@cgray03 : #a5b5b3;
+@cgray04 : #aebdba;
+@cgray05 : #b7c4c2;
+@cgray06 : #c0ccca;
+@cgray07 : #c9d3d1;
+@cgray08 : #d2dad9;
+@cgray09 : #dbe2e0;
+@cgray10 : #e4e9e8;
+@cgray11 : #edf0f0;
+@cgray12 : #f6f8f7;
+/* Base Color */
 @black: rgba(0,0,0,0.8);
+@gray: rgba(0,0,0,0.2);
+@white: rgba(255, 255, 255, 0.9);
+@cbase : #00c5a3;
 
 @button-background:                      @color01;
 @button-color:                           @white;
@@ -55,24 +134,24 @@ html {
   background-color: #ffffff;
 }
 body {
-  color: @cgrad01;
+  color: @cgra101;
   font-family: @font_family_01;
 }
 a, a:link, a:visited {
-  color: @cgrad01;
+  color: @cgra101;
 }
 a:hover, a:active {
-  color: @cgrad02;
+  color: @cgra102;
 }
 .button:hover {
-  border-color: @cgrad01;
-  color: @cgrad01;
+  border-color: @cgra101;
+  color: @cgra101;
 }
 .input:hover {
-  border-color: @cgrad01;
+  border-color: @cgra101;
 }
 .input:focus {
-  border-color: @cgrad01;
+  border-color: @cgra101;
 }
 span#subtitle1 {
   display: inline-block;
@@ -142,10 +221,10 @@ a.uk-button, a:link.uk-button, a:visited.uk-button {
 .copy {
 	color: @white;
 	font-size: 1.0em;
-	-moz-text-shadow: 1px 1px 1px fade(@cgrad01, 70%);
-	-webkit-text-shadow: 1px 1px 1px fade(@cgrad01, 70%);
-	-ms-text-shadow: 1px 1px 1px fade(@cgrad01, 70%);
-	text-shadow: 1px 1px 1px fade(@cgrad01, 70%);
+	-moz-text-shadow: 1px 1px 1px fade(@cgra101, 70%);
+	-webkit-text-shadow: 1px 1px 1px fade(@cgra101, 70%);
+	-ms-text-shadow: 1px 1px 1px fade(@cgra101, 70%);
+	text-shadow: 1px 1px 1px fade(@cgra101, 70%);
 }
 
 /*---- SUB-MENUES ----*/
