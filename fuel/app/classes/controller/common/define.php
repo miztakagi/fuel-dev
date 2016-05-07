@@ -3,20 +3,21 @@
  * DEFINE DATAs
  */
 
-class Const extends Controller
+class Define extends Controller
 {
-	// var_dumpのエイリアス
-	// 開発モードでのみ出力する
 	public static function def()
+	{
 		/* site status */
 		return array(
 			/* site status */
 			'_DEBUG'			=> 1,
 			'_OPEN'			=> 1,
 			'_DOMAIN'		=> $_SERVER["SERVER_NAME"],
-			'_ASSETS' => '/fuel/public/assets/',
+			'_ASSET' => DOCROOT.'assets/',
 			'_SITENAME'	=> 'ののべる.jp',
 			/* headers */
+			'_KEYWORD' => '小説,書籍,本,販売,同人,返金',
+			'_DESC' => 'ののべるは、新しい方式のデジタル書籍販売サポートサービスです。読む人、書く人、すべての読書愛好家に素敵なブックライフを！',
 			'_MENU_' 			=> array(
 				'見つける',
 				'書く人',
@@ -26,13 +27,14 @@ class Const extends Controller
 			),
 			'_COPY_' 			=> array(
 				'物語を見つけよう！',
-				'人生はいつだって物語を欲している',
-				'わたしだけの「面白さ」を探しに……',
-				'面白さは、自分で決める！',
+				'人生はいつだって物語を探している',
+				'今日もまた面白さを求めて旅をする',
+				'面白いかどうかは、自分で決める！',
 				'まだ見たことのない世界へ……',
-				'値段は読んでから決める！',
+				'値段は読んでみてから決めようか！',
 				'心はいつでも物語を求めている…'
 			),
 		);
 	}
 }
+

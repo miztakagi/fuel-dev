@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Member extends Controller_Template]
+class Controller_Member extends Controller_Template
 {
     public $template = 'template/template';   //テンプレートファイルを指定
     public $is_admin = false;   //管理者かどうかフラグ
@@ -11,7 +11,7 @@ class Controller_Member extends Controller_Template]
         if(!Auth::check() and Request::active()->action != 'login'){ //認証通らず、現在リクエストされてるアクションがloginでない場合にログインフォームへリダイレクト
             Response::redirect('member/login');
         }
-        if(Auth:member(100)){ //ユーザが管理者なら、管理者フラグ立てる
+        if(Auth::member(100)){ //ユーザが管理者なら、管理者フラグ立てる
             $this->is_admin = true;
         }
 

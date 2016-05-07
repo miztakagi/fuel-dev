@@ -20,29 +20,68 @@ class Common extends Controller
 		}
 	}
 
+	// DEBUG CONSOLE.LOG出力
+	public static function _log( $array, $label="LOG") {
+		if(Fuel::$env != "development"){
+			return;
+		}
+		if ( !is_array( $array ) ) {
+			$array = array( $array );
+		}
+
+		if ( !empty( $label ) ) {
+			$array = array(
+				$label => $array,
+			);
+		}
+
+		$json = json_encode( $array );
+		echo '<script type="text/javascript">';
+		// IE対策
+		echo "if (!('console' in window)) {";
+		echo "    window.console = {};";
+		echo "    window.console.log = function(str){   return str; };";
+		echo "}";
+		echo "console.log({$json})";
+		echo '</script>';
+	}
+
 	// レイアウトtemplateに各パーツをセットする
 	// @params :: $v: Viewオブジェクト $d: データ配列
 	public static function setLayout($v, $d)
 	{
-		// cssブロック
-		$v->css1 = View::forge('common/css1', $d);
+		// headerブロック
+		$v->header = View::forge('common/header', $d);
 		// naviブロック
 		$v->navi = View::forge('common/navi', $d);
 		// wrap class="container" ブロック
 		$v->wrap = View::forge('common/wrap', $d);
 		// footerブロック
 		$v->footer = View::forge('common/footer', $d);
-		// js読み込みブロック
-		$v->script1 = View::forge('common/script1', $d);
 		// Viewオブジェクトに格納して戻す
 		return $v;
 	}
 
+	// NAVI タイトルワードをランダムに取り出す
 	public static function setCopy()
 	{
-		$key = array_rand(_COPY_);
-		return _COPY_[$key];
+		$dat = Define::def();
+		$copy = $dat['_COPY_'];
+		$key = array_rand($copy);
+		return $copy[$key];
 	}
 
+	/* Generate Password */
+	public static function makePassword($num = 8)
+	{
+    $seeds = 'abcefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return substr(str_shuffle($seeds), 0, $num);
+  }
+
+  // 現在の日時を取得
+  public static function nowtime()
+  {
+  	return date("Y-m-d H:i:s");
+  }
 
 }

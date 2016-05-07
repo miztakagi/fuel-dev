@@ -79,7 +79,7 @@ return array(
 	 */
 	'language'           => 'ja', // Default language
 	'language_fallback'  => 'en', // Fallback language when file isn't available for default language
-	'locale'             => 'en_US', // PHP set_locale() setting, null to not set
+	'locale'             => 'ja_JP', // PHP set_locale() setting, null to not set
 
 	/**
 	 * Internal string encoding charset
@@ -105,15 +105,15 @@ return array(
 	 * Fuel::L_INFO
 	 * Fuel::L_ALL
 	 */
-	// 'log_threshold'    => Fuel::L_WARNING,
-	// 'log_path'         => APPPATH.'logs/',
-	// 'log_date_format'  => 'Y-m-d H:i:s',
+	'log_threshold'    => Fuel::L_WARNING,
+	'log_path'         => APPPATH.'logs/',
+	'log_date_format'  => 'Y-m-d H:i:s',
 
 	/**
 	 * Security settings
 	 */
 	'security' => array(
-		'csrf_autoload'            => true,
+		'csrf_autoload'            => false,
 		'csrf_autoload_methods'    => array('post', 'put', 'delete'),
 		'csrf_bad_request_on_fail' => false,
 		'csrf_auto_token'          => true,
@@ -278,6 +278,7 @@ return array(
 		'packages'  => array(
 			'orm',
 			'auth',
+			'myauth',
 			'email',
 			'oil',
 			'parser',
@@ -306,11 +307,12 @@ return array(
 		 * add it like 'session' => 'auth'.
 		 * If you don't want the config in a group use null as groupname.
 		 */
-		// 'config'  => array(
-		// 	'session',
-		// 	'constant',
-		// 	'define',
-		// ),
+		'config'  => array(
+			'session',
+			'constant',
+			'jpaddress',
+			//'define',
+		),
 
 		/**
 		 * Language files to autoload

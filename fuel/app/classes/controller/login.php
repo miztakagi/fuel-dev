@@ -14,45 +14,46 @@ use \Auth;
 class Controller_Login extends Controller
 {
 	public function action_index() {
-		// if ($_POST) {
-		// 	try {
-		// 		if (ログインチェック) {
-		// 			// ログイン成功したとき。
+		if ($_POST) {
+			try {
+				if (Auth::check()) {
+					// ログイン成功したとき。
 					
-		// 			$referrer = Session::get('referrer'); // セッションを取得。
-		// 			if ( isset($referrer) ) {
-		// 				$url = str_replace(Uri::base(false), "", $referrer); // URLから、必要なトコだけ取り出す。
+					$referrer = Session::get('referrer'); // セッションを取得。
+					if ( isset($referrer) ) {
+						$url = str_replace(Uri::base(false), "", $referrer); // URLから、必要なトコだけ取り出す。
 						
-		// 				if ($url == "logout" || $url == "login") {
-		// 					// ログイン、ログアウトページからきたときはトップページに表示。
-		// 					$url = "";
-		// 				}
-		// 			}
-		// 			else {
-		// 				// リファラなし
-		// 				$url = "";
-		// 			}
-		// 			return Response::redirect($url); // ログイン成功した場合はリダイレクト
-		// 		}
-		// 		else {
-		// 			// ログイン失敗したとき。
-		// 		}
-		// 	}
-		// 	catch (SimpleUserUpdateException $e) {
-		// 		$result_validate = $e->getMessage();
-		// 	}
-		// } else {
-		// 	$ref = Input::referrer();
-		// 	if (filter_var($ref, FILTER_VALIDATE_URL)) {
-		// 		Session::set('referrer', $ref); // リファラを保存しておく
-		// 	}
-		// }
-		$eee['url'] = "dbuser";
-		return $eee;
+						if ($url == "logout" || $url == "login") {
+							// ログイン、ログアウトページからきたときはトップページに表示。
+							$url = "";
+						}
+					}
+					else {
+						// リファラなし
+						$url = "";
+					}
+					return Response::redirect($url); // ログイン成功した場合はリダイレクト
+				}
+				else {
+					// ログイン失敗したとき。
+					echo "NOLOGIN";
+				}
+			}
+			catch (SimpleUserUpdateException $e) {
+				$result_validate = $e->getMessage();
+			}
+			exit;
+		} else {
+			$ref = Input::referrer();
+			if (filter_var($ref, FILTER_VALIDATE_URL)) {
+				Session::set('referrer', $ref); // リファラを保存しておく
+			}
+		}
+		Response::redirect('index');
 	}
 
 	private function validate_create() {
-		$validation = Validation::forge();
+		$validation = Validation::forge('login');
 
 		$validation->add('username', 'ユーザー名')
 			->add_rule('required')
@@ -64,12 +65,25 @@ class Controller_Login extends Controller
 			->add_rule('max_length', 12);
 		$validation->add('email', 'メールアドレス')
 			->add_rule('required')
-			->add_rule('max_length', 255);
+			->add_rule('max_length', 255)
 			->add_rule('valid_email');
 		$validation->add('address', '住所')
 			->add_rule('required');
 
 		$validation->run();
+
+		// バリデートに成功したフィールドと値の組を配列で取得する
+		$vars = $val->validated();
+		// バリデーションエラーをフィールドとエラー内容の組の配列で取得する
+		$errors = $val->error();
+		// get an array of the input that was validated, this merged the post & input given to run()
+		$input = $val->input();
+
+		Common::dump($vars);
+		Common::dump($errors);
+		Common::dump($input);
+		exit;
+
 		return $validation;
 	}
 

@@ -34,5 +34,7 @@ require COREPATH.'bootstrap.php';
 
 // 定数設定の読み込み
 require_once APPPATH.'classes/controller/common/constant.php';
+require_once APPPATH.'classes/controller/common/define.php';
 // 共通関数の読み込み
 require_once APPPATH.'classes/controller/common/common.php';
+

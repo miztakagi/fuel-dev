@@ -1,0 +1,20 @@
+<?php
+	return array(
+	  'required'        => ':labelは必須入力です。',
+	  'min_length'      => ':labelは:param:1文字以上で入力してください。',
+	  'max_length'      => ':labelは:param:1文字以内で入力してください。',
+	  'exact_length'    => ':labelは:param:1文字で入力してください。',
+	  'match_value'     => ':labelは:param:1と一致していません。',
+	  'match_pattern'   => ':labelはパターン:param:1と一致していません。',
+	  'match_field'     => ':param:1が:labelと一致していません。',
+	  'valid_email'     => ':labelが正しくありません。',
+	  'valid_emails'    => ':labelに不正なメールアドレスが含まれています。',
+	  'valid_url'       => ':labelは不正なURLです。',
+	  'valid_ip'        => ':labelは不正なIPアドレスです。',
+	  'numeric_min'     => ':labelは:param:1以上で入力してください。',
+	  'numeric_max'     => ':labelは:param:1以内で入力してください。',
+	  'numeric_between' => ':labelは:param:1以上:param:2以内で入力してください。',
+	  'valid_string'    => ':labelは:rule(:param:1)で入力する必要があります。',
+	  'required_with'   => ':labelは:param:1つ以上選択する必要があります。',
+	  'unique'   				=> '入力された:labelはすでに登録済みです。',
+	);

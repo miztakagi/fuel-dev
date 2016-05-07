@@ -14,25 +14,10 @@ const CONSTANT = 'EXAMPLE';
 define('_DEBUG', 1);
 define('_OPEN', 1);
 define('_DOMAIN', $_SERVER['SERVER_NAME']);
+//define('_DOMAIN', php_uname('n'));
 define('_SITENAME', 'ののべる.jp');
-define('_ASSET', DOCROOT.'/assets/');
+define('_ASSET', DOCROOT.'assets/');
 
 /* headers */
-const _MENU_ = array(
-	'見つける',
-	'書く人',
-	'使い方',
-	'会員登録',
-	'サイト案内'
-);
-const _COPY_ = array(
-	'物語を見つけよう！',
-	'人生はいつだって物語を欲している',
-	'わたしだけの「面白さ」を探しに……',
-	'面白さは、自分で決める！',
-	'まだ見たことのない世界へ……',
-	'値段は読んでから決める！',
-	'心はいつでも物語を求めている…'
-);
-
-
+define('_KEYWORD', '小説,書籍,本,販売,同人,返金');
+define('_DESC', 'ののべるは、新しい方式のデジタル書籍販売サポートサービスです。読む人、書く人、すべての読書愛好家に素敵なブックライフを！');

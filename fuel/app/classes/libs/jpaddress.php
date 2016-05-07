@@ -15,7 +15,7 @@
  * ex. $res = Libs_jpaddress::address($data,1);
  */
 
-class Libs_jpaddress
+class Libs_Jpaddress
 {
 
     // 住所検索用関数
