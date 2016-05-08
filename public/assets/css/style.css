@@ -43,8 +43,23 @@ input {
 .vis_off {
   visibility: hidden;
 }
+.alert {
+  color: #ee0000 !important;
+}
 .noborder {
   border: none !important;
+}
+.mr5 {
+  margin-right: 5px !important;
+}
+.ml5 {
+  margin-left: 5px !important;
+}
+.mr10 {
+  margin-right: 10px !important;
+}
+.ml10 {
+  margin-left: 10px !important;
 }
 /*---- BUTTON ----*/
 .uk-button {
@@ -406,7 +421,7 @@ button.small {
 #login_form.uk-modal .zip-width,
 #regist_form.uk-modal .zip-width {
   width: 15%;
-  min-width: 60px;
+  min-width: 100px;
 }
 #login_form.uk-modal .adjust,
 #regist_form.uk-modal .adjust {

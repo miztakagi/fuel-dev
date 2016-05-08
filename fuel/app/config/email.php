@@ -133,17 +133,36 @@ return array(
 		// 	'starttls' => false,
 		// ),
 
+		// 'smtp' => array(
+		// 	'host'     => 'ssl://sv59.ifastnet8.org',
+		// 	'port'     => 465,
+		// 	'username' => 'info@nonovel.jp',
+		// 	'password' => 'HpXK&#3-#]kR',
+		// 	'auth'     => true,
+		// 	'protocol' => 'SMTP_AUTH',
+		// 	'debug'    => false,
+		// 	'timeout'  => 5
+		// ),
+		// 'smtp' => array(
+		// 	'host'     => 'ssl://sv59.ifastnet8.org',
+		// 	'port'     => 465,
+		// 	'username' => 'info@nonovel.jp',
+		// 	'password' => 'HpXK&#3-#]kR',
+		// 	'auth'     => true,
+		// 	'protocol' => 'SMTP_AUTH',
+		// 	'debug'    => false,
+		// 	'timeout'  => 10
+		// ),
 		'smtp' => array(
-			'host'     => 'ssl://nonovel.jp',
+			'host'     => 'ssl://smtp.gmail.com',
 			'port'     => 465,
-			'username' => 'info@nonovel.jp',
-			'password' => 'HpXK&#3-#]kR',
+			'username' => 'sys.nonovel@gmail.com',
+			'password' => 'Y3mt6B4htr3N',
 			'auth'     => true,
 			'protocol' => 'SMTP_AUTH',
 			'debug'    => false,
 			'timeout'  => 5
 		),
-
 		/**
 		 * Newline
 		 */

@@ -17,29 +17,28 @@
 
 class Jpaddress
 {
-
     // 住所検索用関数
     // @params :: $data:[array] 入力データ / $type:[int] 返すパターン
     // @error :: -1: 郵便番号が不明 -2: 県コードが不明 -3: 住所が不明
     public static function address($data, $pattern=5)
     {
-        // 入力不正処理
-        if(empty($data)){
-            return false;
-        }
-
         // 入力値例
-        $data = array(
-            'pref_num'  => 6,
-            'pref_name' => '東京',
-            'zip'       => '003-0834'
-        );
+        // $data = array(
+        //     'pref_num'  => 6,
+        //     'pref_name' => '東京',
+        //     'zip'       => '003-0834'
+        // );
 
-        // 郵便番号にハイフンを入れる
-        $zip = static::checkZip($data['zip']);
-
-        if($zip==false){
-            return -1;
+        // 検索パターンにより入力値をチェック
+        if (preg_match("/[1-5]/", $pattern)){
+            if(empty($data)){
+                return false;
+            }
+            // 郵便番号にハイフンを入れる
+            $zip = static::checkZip($data['zip']);
+            if($zip==false){
+                return false;
+            }
         }
 
         // 検索パターン
@@ -65,10 +64,13 @@ class Jpaddress
                 $res = static::getKencdAndJushoByZip($zip);
                     break;
             default:
-                $res = '';
+                $res = static::kenList(0, 1);
                 break;
         }
         // 結果を返す
+        if ($res<0 || $res=="") {
+            return false;
+        }
         return $res;
     }
 
@@ -153,7 +155,7 @@ class Jpaddress
         if(!$kencd){
             return -2;
         }
-        $jusho = preg_replace("/^" . static::getKenName($kencd) . "/", "", $jusho);
+        //$jusho = preg_replace("/^" . static::getKenName($kencd) . "/", "", $jusho); // 都道府県名を取る
         $return['jusho'] = $jusho;
         $return['kencd'] = $kencd;
 
@@ -254,6 +256,7 @@ class Jpaddress
             99 => '海外',
         );
         if($flag==1){
+            unset($kens[0],$kens[99]);
             return $kens;
         }else{
             if(empty($num)){
@@ -320,6 +323,7 @@ class Jpaddress
             99 => '海外',
         );
         if($flag==1){
+            unset($kens[0],$kens[99]);
             return $kens;
         }else{
             if(empty($num)){

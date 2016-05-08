@@ -275,8 +275,8 @@ class Auth_Login_SimpleAuth extends \Auth\Auth_Login_SimpleAuth
 			'address'       => $form['address'],
 			'group'         => $group,
 			'confirm_token' => $form['confirm_token'],
-			'created_at'    => Common::nowtime(),
-			'updated_at'    => Common::nowtime(),
+			'created_at'    => \Common::nowtime(),
+			'updated_at'    => \Common::nowtime(),
 			'active'        => $form['active'],
 		);
 		$result = \DB::insert(\Config::get('simpleauth.table_name'))

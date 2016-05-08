@@ -7,7 +7,7 @@
         	<?=Asset::img('logo/logo_190_40.png', array('id'=>'logo', 'class'=>'logo'));?>
         </a>
         <div class="header-comment">
-          <span class="user-name">ようこそ、<?=$username?>さん</span><br>
+          <span class="user-name">ようこそ、<?=$username?> さん</span><br>
           <span class="copy"><?=$page_copy?></span>
         </div>
       </div>

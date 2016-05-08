@@ -1,28 +1,7 @@
 <!-- MODAL -->
 <div id="modals">
-
   <? $username = (!empty($input['username'])) ? $input['username'] : ''; ?>
-  <? $email    = (!empty($input['email'])) ? $input['email'] : ''; ?>
-  <? $zip1     = (!empty($input['zip1'])) ? $input['zip1'] : ''; ?>
-  <? $zip2     = (!empty($input['zip2'])) ? $input['zip2'] : ''; ?>
-
-  <? if ($modal=='login') { ?>
-    <script>
-      $(function(){ modalOpen("#login_form"); });
-    </script>
-  <? } else if ($modal=='regist'){ ?>
-    <script>
-      $(function(){ modalOpen("#regist_form"); });
-    </script>
-  <? } else if ($modal=='registagain'){ ?>
-    <script>
-      $(function(){ modalOpen("#registagain_form"); });
-    </script>
-  <? } else if ($modal=='registcode'){ ?>
-    <script>
-      $(function(){ modalOpen("#registcode_form"); });
-    </script>
-  <? } ?>
+  <? $email    = (!empty(Session::get('email'))) ? Session::get('email') : ''; ?>
 
   <!-- MODAL MENU -->
   <div id="menus" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
@@ -130,6 +109,41 @@
       <?=Form::close()?>
     </div>
   </div>
+
+<? if ($login==0) { ?>
+  <? $zip1     = (!empty($input['zip1'])) ? $input['zip1'] : ''; ?>
+  <? $zip2     = (!empty($input['zip2'])) ? $input['zip2'] : ''; ?>
+
+  <? if ($modal=='login') { ?>
+    <script>
+      $(function(){ modalOpen("#login_form"); });
+    </script>
+  <? } else if ($modal=='regist'){ ?>
+    <script>
+      $(function(){ modalOpen("#regist_form"); });
+    </script>
+  <? } else if ($modal=='registagain'){ ?>
+    <script>
+      $(function(){ modalOpen("#registagain_form"); });
+    </script>
+  <? } else if ($modal=='registcode'){ ?>
+    <script>
+      $(function(){ modalOpen("#registcode_form"); });
+    </script>
+  <? } else if ($modal=='resetmail'){ ?>
+    <script>
+      $(function(){ modalOpen("#resetmail_form"); });
+    </script>
+  <? } else if ($modal=='resetcode'){ ?>
+    <script>
+      $(function(){ modalOpen("#resetcode_form"); });
+    </script>
+  <? } else if ($modal=='resetpassform'){ ?>
+    <script>
+      $(function(){ modalOpen("#resetpass_form"); });
+    </script>
+  <? } ?>
+
   <!-- MODAL LOGIN FORM -->
   <div id="login_form" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
     <div class="uk-modal-dialog">
@@ -138,10 +152,21 @@
           <h2><i class="uk-icon-sign-in"></i> ログイン</h2>
       </div>
 
+      <? if(!empty($message) && $modal=="login"){ ?>
+        <div class="uk-alert uk-text-left">
+          <ul>
+            <li><?=$message?></li>
+          </ul>
+        </div>
+      <? } ?>
+
       <? if(count($errors) > 0 && $modal=="login"){ ?>
         <div class="uk-alert uk-alert-danger uk-text-left err">
           <ul>
           <? foreach ($errors as $error){ ?>
+            <? if (preg_match("/ユーザ登録が完了していません/", $error)) {?>
+              <script>$("#regist_new").removeClass("disp_on").addClass("disp_off");$("#regist_again").removeClass("disp_off").addClass("disp_on");</script>
+            <? } ?>
             <li><?=$error?></li>
           <? } ?>
           </ul>
@@ -151,31 +176,30 @@
       <?=Form::open(array('id'=>'loginform', 'name'=>'loginform', 'action'=>'login', 'method'=>'post', 'class'=>'uk-form'))?>
         <?=Form::hidden('formname', 'loginform')?>
         <table width="100%" border="0" class="uk-table">
-          <tr><th scope="row" class="label-width noborder">メールアドレス</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large'))?>
-            </td>
-          </tr>
-          <tr><th scope="row" class="label-width noborder">パスワード</th>
-            <td class="uk-form-controls noborder">
-              <?=Form::password('password', '', array('class'=>'uk-width-1-1 uk-form-large'))?>
-            </td>
-          </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
-            <td class="uk-text-left noborder adjust">
-              <?=Form::checkbox('remember', 1, true)?>
-              <?=Form::label('ログインを継続する', 'remember')?>
-            </td>
-          </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
-            <td class="uk-align-left noborder">
-              <?=Form::button('ok', 'ログインする', array('type'=>'submit', 'class'=>'uk-button uk-button-large'));?>
-              <span class=""><a  data-uk-modal="{target:'#resetpass_mail'}">パスワードを忘れた場合はこちら</a></span>
+              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
-            <td colspan="2" class="uk-ckearfix noborder">
-              <?=Form::button('new', '新規ユーザ登録（無料）', array('class'=>'uk-button uk-float-right', 'type'=>'button', 'data-uk-modal'=>'{target:\'#regist_form\'}'));?>
+            <td class="uk-form-controls noborder">
+              <?=Form::password('password', '', array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'パスワード'))?>
+            </td>
+          </tr>
+          <tr class="disp_off">
+            <td class="noborder">
+              <?=Form::label('ログインを継続する', 'remember')?><?=Form::checkbox('remember', 1, true)?>
+            </td>
+          </tr>
+          <tr>
+            <td class="noborder">
+              <?=Form::button('ok', 'ログインする', array('type'=>'submit', 'class'=>'uk-button uk-button-large'));?>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-ckearfix noborder">
+                <?=Form::button('resetpass', 'パスワードを忘れた？', array('class'=>'uk-button uk-float-left mr10', 'type'=>'button', 'data-uk-modal'=>'{target:\'#resetmail_form\'}'));?>
+                <?=Form::button('registnew', '新規ユーザ登録（無料）', array('class'=>'uk-button uk-float-left', 'type'=>'button', 'data-uk-modal'=>'{target:\'#regist_form\'}'));?>
             </td>
           </tr>
         </table>
@@ -203,32 +227,34 @@
       <?=Form::open(array('id'=>'registform', 'name'=>'registform', 'action'=>'regist', 'method'=>'post', 'class'=>'uk-form'))?>
         <?=Form::hidden('formname', 'registform')?>
         <table width="100%" border="0" class="uk-table">
-          <tr><th scope="row" class="label-width noborder">ユーザ名</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <input name="username" type="text" id="username" class="uk-width-1-1 uk-form-large" value="<?=$username?>" />
+              <input name="username" type="text" id="username" class="uk-width-1-1 uk-form-large" placeholder='ユーザ名' value="<?=$username?>" />
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">郵便番号</th>
+          <tr>
             <td class="uk-form-controls uk-text-left noborder">
-              <input type="text" name="zip1" id="zip1" class="uk-width-1-5 uk-form-large zip-width" maxlength="3" value="<?=$zip1?>"> <i class="uk-icon-minus"></i> <input type="text" name="zip2" id="zip2" class="uk-width-1-5 uk-form-large zip-width" maxlength="4" value="<?=$zip2?>">
+              <input type="text" name="zip1" id="zip1" class="uk-width-1-5 uk-form-large zip-width" maxlength="3" placeholder='郵便番号(1)' value="<?=$zip1?>">
+              <i class="uk-icon-minus"></i>
+              <input type="text" name="zip2" id="zip2" class="uk-width-1-5 uk-form-large zip-width" maxlength="4" placeholder='郵便番号(2)' value="<?=$zip2?>">
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">メールアドレス</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <input type="text" name="email" id="email" class="uk-width-1-1 uk-form-large" value="<?=$email?>" />
+              <input type="text" name="email" id="email" class="uk-width-1-1 uk-form-large" placeholder='メールアドレス' value="<?=$email?>" />
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">パスワード</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <input type="password" name="password" id="password" class="uk-width-1-1 uk-form-large">
+              <input type="password" name="password" id="password" class="uk-width-1-1 uk-form-large" placeholder='パスワード'>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">パスワード確認</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <input type="password" name="password_confirmation" id="password_confirmation" class="uk-width-1-1 uk-form-large">
+              <input type="password" name="password_confirmation" id="password_confirmation" class="uk-width-1-1 uk-form-large" placeholder='パスワード確認'>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
+          <tr>
             <td class="uk-align-left noborder">
               <button type="submit" name="ok" id="ok" class="uk-button uk-button-large registsubmit">登録する</button> &nbsp;
               <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
@@ -259,20 +285,20 @@
       <?=Form::open(array('id'=>'registagainform', 'name'=>'registagainform', 'action'=>'registagain', 'method'=>'post', 'class'=>'uk-form'))?>
         <?=Form::hidden('formname', 'registagainform')?>
         <table width="100%" border="0" class="uk-table">
-          <tr><th scope="row" class="label-width noborder">メールアドレス</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large'))?>
+              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">パスワード</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::password('password', '', array('class'=>'uk-width-1-1 uk-form-large'))?>
+              <?=Form::password('password', '', array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'パスワード'))?>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
-            <td class="uk-align-left noborder">
-              <?=Form::button('ok', 'ユーザ登録確認メール再送信', array('type'=>'submit', 'class'=>'uk-button uk-button-large registsubmit'));?>
-              <span class=""><a  data-uk-modal="{target:'#resetpass_mail'}">パスワードを忘れた場合はこちら</a></span>
+          <tr>
+            <td class="uk-clearfix noborder">
+              <?=Form::button('ok', 'ユーザ登録確認メール再送信', array('type'=>'submit', 'class'=>'uk-button uk-float-left uk-button-large registsubmit'));?>
+              <?=Form::button('new', 'パスワードを忘れた？', array('class'=>'uk-button uk-float-right uk-button', 'type'=>'button', 'data-uk-modal'=>'{target:\'#resetmail_form\'}'));?>
             </td>
           </tr>
         </table>
@@ -282,7 +308,6 @@
   <!-- MODAL REGISTCODE FORM -->
   <div id="registcode_form" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
     <div class="uk-modal-dialog">
-      <button type="button" class="uk-modal-close uk-close uk-close-alt"></button>
       <div class="uk-modal-header">
           <h2><i class="uk-icon-user-plus"></i> ユーザ登録確認</h2>
       </div>
@@ -300,16 +325,17 @@
       <div class="">
         ユーザ登録確認メールを送信しました。<br>
         「ののべる - ユーザ登録メール」に記載されている確認用コードを入力するとユーザ登録が完了します。
+        <p class="alert">この画面は閉じないでメールをお待ち下さい。</p>
       </div>
       <?=Form::open(array('id'=>'registcodeform', 'name'=>'registcodeform', 'action'=>'registcheck', 'method'=>'post', 'class'=>'uk-form'))?>
         <?=Form::hidden('formname', 'registcodeform')?>
         <table width="100%" border="0" class="uk-table">
-          <tr><th scope="row" class="label-width noborder">確認コード</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('mailcode', '', array('class'=>'uk-width-1-1 uk-form-large'))?>
+              <?=Form::input('mailcode', '', array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'確認コード'))?>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
+          <tr>
             <td class="uk-align-left noborder">
               <?=Form::button('ok', 'ユーザ登録完了＆ログイン', array('type'=>'submit', 'class'=>'uk-button uk-button-large'));?>
             </td>
@@ -318,40 +344,139 @@
       <?=Form::close()?>
     </div>
   </div>
+
+<? } ?>
+
   <!-- MODAL RESETPASSWORD MAIL FORM -->
-  <div id="resetpass_mail" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
+  <div id="resetmail_form" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
     <div class="uk-modal-dialog">
       <button type="button" class="uk-modal-close uk-close uk-close-alt"></button>
       <div class="uk-modal-header">
           <h2><i class="uk-icon-lock"></i> パスワード再設定</h2>
       </div>
-      <?php //echo $add_error; ?>
-      <?=Form::open(array('id'=>'resetform', 'name'=>'resetform', 'action'=>'newpassword', 'method'=>'post', 'class'=>'uk-form'))?>
-        <?=Form::csrf()?>
-        <?=Form::hidden('formname', 'resetpass_mail')?>
 
+      <? if(count($errors) > 0 && $modal=="resetmail"){ ?>
+        <div class="uk-alert uk-alert-danger uk-text-left err">
+          <ul>
+          <? foreach ($errors as $error){ ?>
+            <li><?=$error?></li>
+          <? } ?>
+          </ul>
+        </div>
+      <? } ?>
+
+      <?=Form::open(array('id'=>'resetmailform', 'name'=>'resetmailform', 'action'=>'resetmail', 'method'=>'post', 'class'=>'uk-form'))?>
+        <?=Form::hidden('formname', 'resetmailform')?>
         <table width="100%" border="0" class="uk-table">
-          <tr><th scope="row" class="label-width noborder">メールアドレス</th>
+          <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', '', array('type'=>'text', 'class'=>'uk-width-1-1 uk-form-large'))?>
+              <?=Form::input('email', $email, array('type'=>'text', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
-          <tr><th scope="row" class="label-width noborder">&nbsp;</th>
-            <td class="uk-align-left noborder adjust">
-              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large adjust" onClick="$('#send').removeClass('disp_off').addClass('disp_on');return true;">再設定メールを送信する</button> &nbsp;
+          <tr>
+            <td class="uk-align-left noborder">
+              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large registsubmit mr10">再設定メールを送信する</button>
               <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
-            </td>
-          </tr>
-          <tr class="disp_off" id="send">
-            <td class="uk-align-center" colspan="2">
-              <p>登録されたメールアドレスに、新しいパスワードに変更するためのリンクURLが記載されたメールが送信されましたので、ご確認下さい。</p>
-              <button type="button" class="uk-button uk-modal-close">閉じる</button>
             </td>
           </tr>
         </table>
       <?=Form::close()?>
     </div>
   </div>
+  <!-- MODAL RESET CODE FORM -->
+  <div id="resetcode_form" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
+    <div class="uk-modal-dialog">
+      <div class="uk-modal-header">
+          <h2><i class="uk-icon-lock"></i> パスワード変更確認</h2>
+      </div>
+
+      <? if(count($errors) > 0 && $modal=="resetcode"){ ?>
+        <div class="uk-alert uk-alert-danger uk-text-left err">
+          <ul>
+          <? foreach ($errors as $error){ ?>
+            <li><?=$error?></li>
+          <? } ?>
+          </ul>
+        </div>
+      <? } ?>
+
+      <div class="">
+        パスワード再設定確認メールを送信しました。<br>
+        「ののべる - パスワード再設定メール」に記載されている確認用コードを入力すると新しいパスワードを設定することができます。
+        <p class="alert">この画面は閉じないでメールをお待ち下さい。</p>
+      </div>
+      <?=Form::open(array('id'=>'resetcodeform', 'name'=>'resetcodeform', 'action'=>'resetcode', 'method'=>'post', 'class'=>'uk-form'))?>
+        <?=Form::hidden('formname', 'resetcodeform')?>
+        <table width="100%" border="0" class="uk-table">
+          <tr>
+            <td class="uk-form-controls noborder">
+              <?=Form::input('resetmailcode', '', array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'確認コード'))?>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-align-left noborder">
+              <?=Form::button('ok', 'パスワードを再設定する', array('type'=>'submit', 'class'=>'uk-button uk-button-large'));?>
+            </td>
+          </tr>
+        </table>
+      <?=Form::close()?>
+    </div>
+  </div>
+  <!-- MODAL RESET PASSWORD FORM -->
+  <div id="resetpass_form" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
+    <div class="uk-modal-dialog">
+      <button type="button" class="uk-modal-close uk-close uk-close-alt"></button>
+      <div class="uk-modal-header">
+          <h2><i class="uk-icon-lock"></i> パスワード再設定</h2>
+      </div>
+
+      <? if(!empty($message) && $modal=="resetpassform"){ ?>
+        <div class="uk-alert uk-text-left">
+          <ul>
+            <li><?=$message?></li>
+          </ul>
+        </div>
+      <? } ?>
+
+      <? if(count($errors) > 0 && $modal=="resetpassform"){ ?>
+        <div class="uk-alert uk-alert-danger uk-text-left err">
+          <ul>
+          <? foreach ($errors as $error){ ?>
+            <li><?=$error?></li>
+          <? } ?>
+          </ul>
+        </div>
+      <? } ?>
+
+      <?=Form::open(array('id'=>'resetpassform', 'name'=>'resetpassform', 'action'=>'resetpass', 'method'=>'post', 'class'=>'uk-form'))?>
+        <?=Form::hidden('formname', 'resetpassform')?>
+        <table width="100%" border="0" class="uk-table">
+          <tr>
+            <td class="uk-form-controls noborder">
+              <?=Form::input('email', $email, array('type'=>'text', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-form-controls noborder">
+              <?=Form::input('password', '', array('type'=>'password', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'新しいパスワード'))?>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-form-controls noborder">
+              <?=Form::input('password_confirmation', '', array('type'=>'password', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'新しいパスワード確認'))?>
+            </td>
+          </tr>
+          <tr>
+            <td class="uk-align-left noborder">
+              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large">新しいパスワードを登録する</button> &nbsp;
+              <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
+            </td>
+          </tr>
+        </table>
+      <?=Form::close()?>
+    </div>
+  </div>
+
   <!-- MODAL INFO -->
   <div id="infobox" class="uk-modal" aria-hidden="true" style="display: none; overflow-y: auto;">
     <div class="uk-modal-dialog">
