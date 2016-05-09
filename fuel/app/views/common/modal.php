@@ -82,7 +82,7 @@
       <?=Form::open(array('id'=>'searchform', 'name'=>'searchform', 'action'=>'search', 'method'=>'post', 'class'=>'uk-form uk-width-medium-1-1'))?>
         <?=Form::csrf()?>
           <div class="uk-form-controls">
-            <input placeholder="フリーワード" name="searchwords" type="text" class="uk-width-1-1 uk-form-large">
+            <input placeholder="フリーワード" name="searchwords" type="search" class="uk-width-1-1 uk-form-large">
           </div>
           <div class="uk-form-controls">
             <select name="category1" class="uk-form-large">
@@ -178,7 +178,7 @@
         <table width="100%" border="0" class="uk-table">
           <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
+              <?=Form::input('email', $email, array('type'=>'email', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
@@ -234,30 +234,30 @@
           </tr>
           <tr>
             <td class="uk-form-controls uk-text-left noborder">
-              <input type="text" name="zip1" id="zip1" class="uk-width-1-5 uk-form-large zip-width" maxlength="3" placeholder='郵便番号(1)' value="<?=$zip1?>">
+              <?=Form::input('zip1', $zip1, array('type'=>'tel', 'class'=>'uk-width-1-1 uk-form-large zip-width', 'pattern'=>'\d*', 'maxlength'=>'3', 'placeholder'=>'〒'))?>
               <i class="uk-icon-minus"></i>
-              <input type="text" name="zip2" id="zip2" class="uk-width-1-5 uk-form-large zip-width" maxlength="4" placeholder='郵便番号(2)' value="<?=$zip2?>">
+              <?=Form::input('zip2', $zip2, array('type'=>'tel', 'class'=>'uk-width-1-1 uk-form-large zip-width', 'pattern'=>'\d*', 'maxlength'=>'4', 'placeholder'=>'〒'))?>
             </td>
           </tr>
           <tr>
             <td class="uk-form-controls noborder">
-              <input type="text" name="email" id="email" class="uk-width-1-1 uk-form-large" placeholder='メールアドレス' value="<?=$email?>" />
+              <?=Form::input('email', $email, array('type'=>'email', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
             <td class="uk-form-controls noborder">
-              <input type="password" name="password" id="password" class="uk-width-1-1 uk-form-large" placeholder='パスワード'>
+              <?=Form::input('password', '', array('type'=>'password', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'パスワード'))?>
             </td>
           </tr>
           <tr>
             <td class="uk-form-controls noborder">
-              <input type="password" name="password_confirmation" id="password_confirmation" class="uk-width-1-1 uk-form-large" placeholder='パスワード確認'>
+              <?=Form::input('password_confirmation', '', array('type'=>'password', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'パスワード確認'))?>
             </td>
           </tr>
           <tr>
             <td class="uk-align-left noborder">
-              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large registsubmit">登録する</button> &nbsp;
-              <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
+              <?=Form::button('ok', '登録する', array('class'=>'uk-button uk-button-large mr10 registsubmit', 'type'=>'submit'));?>
+              <?=Form::button('cancel', 'キャンセル', array('class'=>'uk-button uk-button-large uk-modal-close', 'type'=>'button'));?>
             </td>
           </tr>
         </table>
@@ -287,7 +287,7 @@
         <table width="100%" border="0" class="uk-table">
           <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
+              <?=Form::input('email', $email, array('type'=>'email', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
@@ -370,13 +370,13 @@
         <table width="100%" border="0" class="uk-table">
           <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('type'=>'text', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
+              <?=Form::input('email', $email, array('type'=>'email', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
             <td class="uk-align-left noborder">
-              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large registsubmit mr10">再設定メールを送信する</button>
-              <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
+              <?=Form::button('ok', '再設定メールを送信する', array('type'=>'submit', 'class'=>'uk-button uk-button-large registsubmit mr10'));?>
+              <?=Form::button('cancel', 'キャンセル', array('type'=>'button', 'class'=>'uk-button uk-button-large uk-modal-close'));?>
             </td>
           </tr>
         </table>
@@ -453,7 +453,7 @@
         <table width="100%" border="0" class="uk-table">
           <tr>
             <td class="uk-form-controls noborder">
-              <?=Form::input('email', $email, array('type'=>'text', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
+              <?=Form::input('email', $email, array('type'=>'email', 'class'=>'uk-width-1-1 uk-form-large', 'placeholder'=>'メールアドレス'))?>
             </td>
           </tr>
           <tr>
@@ -468,8 +468,8 @@
           </tr>
           <tr>
             <td class="uk-align-left noborder">
-              <button type="submit" name="ok" id="ok" class="uk-button uk-button-large">新しいパスワードを登録する</button> &nbsp;
-              <button type="button" class="uk-button uk-button-large uk-modal-close">キャンセル</button>
+              <?=Form::button('ok', '新しいパスワードを登録する', array('type'=>'submit', 'class'=>'uk-button uk-button-large mr10'));?>
+              <?=Form::button('cancel', 'キャンセル', array('type'=>'button', 'class'=>'uk-button uk-button-large uk-modal-close'));?>
             </td>
           </tr>
         </table>

@@ -32,7 +32,7 @@ class Controller_Index extends Controller
 		$data['page_copy']  = Common::setCopy();
 		$data['page_title'] = 'ののべる | TOP';
 		$data['login']      = $this->login;
-		$data['username']   = Session::get('username');
+		$data['username']   = $this->username;
 		$data['modal']      = null;
 		$data['errors']     = [];
 		// エラーチェック
@@ -64,7 +64,7 @@ class Controller_Index extends Controller
     if (Input::post()){
 			$email = Input::post('email', null);
 			$password = Input::post('password', null);
-			Session::set('email', $email);
+			//Session::set('email', $email);
 		}
 		// 入力データチェック
 		if (!empty($email) && !empty($password)) {

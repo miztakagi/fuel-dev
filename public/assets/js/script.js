@@ -5,8 +5,7 @@ $(function(){
     hh = $(this).height();
   });
   var mh = 30;　// main部の最小topマージン
-  var sh = hh + mh + 14;
-  mh -=8;
+  var sh = hh + mh;
   //$("#main").css("margin", sh+"px auto");
   // header/footer エレメント指定
 	var navi = $("#navi-block");
@@ -14,8 +13,6 @@ $(function(){
 	var foot = $("#foot");
 	var fborder = $("#footer-border");
   var fh = foot.height(); // footer 高さ
-  // ロゴ画像ランダム表示用乱数 1~4
-  var winWidth = $(window).width();
 
   // イベントハンドラの設定
   // load や resize も入れておかないと android でうまく動作しないことがあるかも。問題なさそうなら外したほうが吉。
@@ -46,35 +43,19 @@ $(function(){
 
 	// スクロールイベントを監視
   $(window).on("scroll", function() {
+    var d = 676;
     var s = $(this).scrollTop(); // スクロール量
-    var scrollHeight = $(document).height(); // ページ長さ 
+    var scrollHeight = $(document).height(); // ページ長さ
     var scrollPosition = $(window).height() + $(window).scrollTop();
-    var winWidth = $(window).width(); 
+    var winWidth = $(window).width();
+    var r = document.body.scrollHeight - document.body.clientHeight - document.body.scrollTop;
+    //$("#dd").html("bottomまで="+r+"/ ページ長="+scrollHeight+"/ scroll地点="+scrollPosition+"/ スクロール量="+s);
     // スクロール量によってヘッダ部の自動出し分け
-    if(s <= mh) {
+    if (s < mh) {
       dispOn(hborder, navi);
     } else if(s > mh) {
       dispOn(navi, hborder);
       //dispOn(foot, fborder);
-    } else if (scrollPosition == scrollHeight){
-      dispOn(fborder, foot); // footer 表示する // 境界でちらつくので自動表示はしない
-      //alert(scrollPosition+"/"+scrollHeight);
-    } else if (scrollPosition > scrollHeight){
-      // bottomに来たら次のコンテンツを読み込む
-      var obj = $(this);
-      if (!obj.data('loading')) {
-        obj.data('loading', true);
-        $('#image').html('&lt;img src="loader.gif" /&gt;');
-        $.ajax({
-            url: "test.html",
-            cache: false,
-            success: function(html){ 
-                $("#hoge").append(html); 
-                $('#image').html(''); 
-                obj.data('loading', false);
-            } 
-        }); 
-      } 
     }
   });
 
@@ -90,7 +71,7 @@ $(function(){
 	});
 	$("#footer-close").on("click", function(){
 		dispOn(foot, fborder);
-    $('html, body').animate({scrollTop:$(document).height()-5}, 'slow'); // bottomへスクロールして表示
+    //$('html, body').animate({scrollTop:$(document).height()-fh}, 'slow'); // bottomへスクロールして表示
 	});
 
   // オーバーレイの表示非表示
@@ -122,7 +103,7 @@ $(function(){
 
 // header/footer 表示非表示
 function dispOn(target1, target2){
-  target1.hide();
+  target1.slideUp(200);
   target2.show();
   return false;
 }
@@ -130,4 +111,17 @@ function dispOn(target1, target2){
 function modalOpen(id){
   var modal = UIkit.modal(id);
   modal.show();
+}
+
+// もっと見る 10件追加
+function load_more() {
+  $('#loading').show();
+  $.ajax({
+    url: "add.php",
+    cache: false,
+    success: function(data) { 
+      $("#dd").append(data); 
+      $('#loading').hide(); 
+    } 
+  });
 }

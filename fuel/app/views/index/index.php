@@ -1,7 +1,7 @@
 <!-- MAIN -->
 <div id="main">
     <!-- CONTAINER -->
-    <div class="container">
+    <div class="container" id="content">
 
         <!-- メッセージ表示 -->
         <? if (!empty($message)) { ?>
@@ -23,12 +23,9 @@
         <!-- FILTER TAB -->
         <ul id="filter" class="uk-subnav uk-subnav-pill">
             <li class="uk-active" data-uk-filter=""><a href="#">すべて</a></li>
-            <li data-uk-filter="na" class=""><a href="#">ノベル</a></li>
-            <li data-uk-filter="ca" class=""><a href="#">コミック</a></li>
-            <li data-uk-filter="ar" class=""><a href="#">アート</a></li>
-            <li data-uk-filter="ad" class=""><a href="#">アダルト</a></li>
-            <li data-uk-filter="et" class=""><a href="#">その他</a></li>
-            <li data-uk-filter="info" class=""><a href="#">インフォ</a></li>
+            <? foreach (Define::def()['_CATE_'] as $k=>$v) { ?>
+                <li data-uk-filter="<?=$k?>" class=""><a href="#"><?=$v?></a></li>
+            <? } ?>
         </ul>
         <!-- END FILTER TAB -->
 
@@ -315,11 +312,13 @@
                     </div>
                 </figure>
             </div>
-
              <!-- END ITEM-BLOCK -->
         </div>
+        <div id="loading" class="disp_off"><i class="uk-icon-large uk-icon-spinner uk-icon-spin"></i></div>
+        <div id="dd"></div>
         <!-- END GRID -->
     </div>
+    <div id="more" class="disp_on"><button class="uk-button uk-button-large" onclick="load_more();">もっと見る</button></div>
     <!-- END CONTAINER -->
 </div>
 <!-- END MAIN -->

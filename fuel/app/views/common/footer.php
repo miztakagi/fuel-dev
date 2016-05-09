@@ -3,7 +3,7 @@
     <a class="icon-center uk-icon-arrow-down"></a>
   </div>
   <section class="uk-footer" id="foot" style="display:none;">
-    <!--<button type="button" class="uk-close uk-close-alt" id="footer-close"></button>-->
+    <button type="button" class="uk-close uk-close-alt" id="footer-close"></button>
     <div class="uk-container uk-container-center uk-text-center">
       <ul class="uk-subnav uk-subnav-line uk-flex-center">
         <li><a href="https://laravel.com/docs/5.2/blade" target="_blank">laravel 5.2</a></li>

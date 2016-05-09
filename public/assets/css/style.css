@@ -123,7 +123,7 @@ div#header-border {
 div#header-border .icon-center {
   float: left;
   position: relative;
-  left: 50%;
+  left: 49%;
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
@@ -149,7 +149,6 @@ div#footer-border {
   height: 15px;
   bottom: 0px;
   background: #08cccc;
-  margin-top: 20px;
   color: rgba(255, 255, 255, 0);
   -webkit-box-shadow: 2px 0px 3px rgba(142, 155, 157, 0.5);
   -moz-box-shadow: 2px 0px 3px rgba(142, 155, 157, 0.5);
@@ -159,7 +158,7 @@ div#footer-border {
 div#footer-border .icon-center {
   float: left;
   position: relative;
-  left: 50%;
+  left: 49%;
   box-sizing: border-box;
   display: inline-block;
   text-align: center;
@@ -212,7 +211,7 @@ div#footer-border .icon-center {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 12px 0 15px;
+  padding: 13px 0 10px;
   background: #08cccc;
   border: none;
   txt-align: left;
@@ -683,4 +682,8 @@ figure.uk-overlay {
 }
 .uk-panel-box:hover {
   cursor: pointer;
+}
+/* MORE */
+#more {
+  margin: 20px auto 40px;
 }
