@@ -13,6 +13,7 @@ class Model_Users extends \Orm\Model
 		'email', 						// varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'メールアドレス - UNIQUE',
 		'zip1', 						// tinyint(5) NOT NULL COMMENT '郵便番号(1)',
 		'zip2', 						// tinyint(4) DEFAULT NULL COMMENT '郵便番号(2)',
+		'pref',							// tinyint(3) NOT NULL DEFAULT '0' COMMENT '都道府県コード - 郵便番号から自動取得',
 		'address',					// text COLLATE utf8_unicode_ci NOT NULL COMMENT '住所 - 必須',
 		'profile',					// text COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'ユーザ情報',
 		'group',						// int(3) NOT NULL DEFAULT '0' COMMENT 'ユーザグループ - 必須 [セッション保持] - 0:一般 1:投稿あり 2:特別 3:スタッフ 4:管理者 999:admin',

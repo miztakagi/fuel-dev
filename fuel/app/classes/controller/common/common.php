@@ -17,6 +17,7 @@ class Common extends Controller
 	{
 		if(Fuel::$env == "development"){
 			var_dump($data);
+			exit;
 		}
 	}
 

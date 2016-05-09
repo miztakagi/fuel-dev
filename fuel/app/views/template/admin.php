@@ -32,13 +32,11 @@
 		<!-- CSS -->
 		<?=Asset::css('uikit.almost-flat.min.css');?>
 		<?=Asset::css('components-almost-flat/tooltip.almost-flat.min.css');?>
-		<?=Asset::css('chewing-grid/chewing-grid-atomic.min.css');?>
-		<?=Asset::css('style.css');?>
+		<?=Asset::css('style_admin.css');?>
 		<!-- JAVASCRIPT -->
 		<?=Asset::js('jquery.js');?>
 		<?=Asset::js('uikit.min.js');?>
 		<?=Asset::js('components/grid.min.js');?>
-		<?=Asset::js('jquery.bottom-1.0.js');?>
 		<?=Asset::js('script.js');?>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,14 +46,18 @@
 		<![endif]-->
 	</head>
 	<body>
+		<!-- HEAD NAVI -->
 		<?php echo $navi; ?>
+		<!-- END HEAD NAVI -->
 		<!-- CONTAINER -->
-		<div class="container main">
-				<!-- CONTENT -->
-				<div class="col-md-12">
-					<?php echo $content; ?>
-				</div><!-- END CONTENT -->
+		<div class="container">
+			<!-- CONTENT -->
+			<div id="main-grid">
+				<?php echo $content; ?>
+			</div>
+			<!-- END CONTENT -->
 		</div><!-- END CONTAINER -->
+
 	  <!-- FOOTER -->
 	  <div id="footer-border" style="display:block;">
 	    <a class="icon-center uk-icon-arrow-down"></a>
@@ -79,5 +81,6 @@
 	    </div>
 	  </section>
 	  <!-- END FOOTER -->
+
 	</body>
 </html>
