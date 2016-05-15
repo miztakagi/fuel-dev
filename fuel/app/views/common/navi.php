@@ -20,25 +20,27 @@
           <span>お知らせ</span><br>
           <button class="uk-button header-btn" data-uk-modal="{target:'#bell'}"><i class="uk-icon-bell-o"></i></button>
         </div>
+      <? if($login){ // ログイン時 ?>
+        <div class="menu-icon">
+          <span>マイページ</span><br>
+          <button class="uk-button header-btn" data-uk-modal="{target:'#mypage'}"><i class="uk-icon-user"></i></button>
+        </div>
+      <? } ?>
         <div class="menu-icon">
           <span>メニュー</span><br>
           <button class="uk-button header-btn" data-uk-modal="{target:'#menus'}"><i class="uk-icon-bars"></i></button>
         </div>
-        <? if($login){ // ログイン時 ?>
-          <div class="menu-icon">
-            <span>マイページ</span><br>
-            <button class="uk-button header-btn" data-uk-modal="{target:'#mypage'}"><i class="uk-icon-user"></i></button>
-          </div>
-          <div class="menu-icon">
-            <span>ログアウト</span><br>
-            <a href="logout"><button class="uk-button header-btn"><i class="uk-icon-sign-out"></i></button></a>
-          </div>
-        <? }else{ // 未ログイン時 ?>
-          <div class="menu-icon">
-            <span>ログイン</span><br>
-            <button class="uk-button header-btn" data-uk-modal="{target:'#login_form'}"><i class="uk-icon-sign-in"></i></button>
-          </div>
-        <? } ?>
+      <? if($login){ // ログイン時 ?>
+        <div class="menu-icon">
+          <span>ログアウト</span><br>
+          <a href="/logout"><button class="uk-button header-btn"><i class="uk-icon-sign-out"></i></button></a>
+        </div>
+      <? }else{ // 未ログイン時 ?>
+        <div class="menu-icon">
+          <span>ログイン</span><br>
+          <button class="uk-button header-btn" data-uk-modal="{target:'#login_form'}"><i class="uk-icon-sign-in"></i></button>
+        </div>
+      <? } ?>
       </div>
     </nav>
   </div>

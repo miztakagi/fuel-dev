@@ -43,11 +43,11 @@ class Model_Users extends \Orm\Model
 			'property' => 'updated_at',
 		),
 		// last login 日時は随時更新
-		'Orm\Observer_LastLogin' => array(
-			'events' => array('before_update'),
-			'mysql_timestamp' => true,
-			'property' => 'last_login',
-		),
+		// 'Orm\Observer_LastLogin' => array(
+		// 	'events' => array('before_update'),
+		// 	'mysql_timestamp' => true,
+		// 	'property' => 'last_login',
+		// ),
 	);
 
 
@@ -65,6 +65,31 @@ class Model_Users extends \Orm\Model
 		    $data['user_id'] = Arr::get(Auth::get_user_id(), 1); //ユーザIDを取得
 		    return Response::forge(View::forge('index'));
 		}
+	}
+
+	// SELECT
+	public static function selector($select='*', $whereis=false, $word=false, $order=false, $sortflag=false, $limit=false, $offset=0){
+		$query= DB::select($select)
+			->from('users');
+		if(!empty($word) && !empty($whereis)){
+			$query->where($whereis, 'like', '%'.$word.'%');
+		}
+		if(!empty($order) && !empty($sort)){
+			$query->order_by($order, $sortflag);
+		}
+		if(!empty($limit)){
+			$query->limit($limit);
+		}
+		$query->offset($offset);
+		$result = $query->execute();
+$qq = DB::last_query();
+Common::_log($qq, 'QUERY');
+		return $result;
+	}
+
+	// 全件数取得
+	public static function getAllCount(){
+		return DB::count_records('users');
 	}
 
 

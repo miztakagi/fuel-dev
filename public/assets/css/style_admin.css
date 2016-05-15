@@ -287,49 +287,6 @@ a#menus.uk-navbar-toggle.uk-float-right:hover {
 .header-comment .copy {
   font-size: 1.0em;
 }
-/*---- SUB-MENUES ----*/
-#menus .uk-modal-dialog .uk-button-dropdown {
-  width: 100%;
-}
-#menus .uk-modal-dialog .menu-btn {
-  width: 100%;
-  margin-bottom: 10px;
-  text-align: left;
-}
-#menus .uk-modal-dialog .menu-btn a {
-  color: #ffffff;
-}
-#menus .uk-modal-dialog .menu-btn i.uk-icon-caret-down {
-  float: right;
-  padding-top: 6px;
-}
-#menus .uk-modal-dialog .uk-dropdown {
-  border: 1px solid #18bcbc;
-  margin-left: 20px;
-}
-#menus .uk-modal-dialog .uk-dropdown li a {
-  font-weight: bold;
-  padding: 10px 0 10px 15px;
-  color: #069b9b;
-  text-shadow: none;
-}
-#menus .uk-modal-dialog .uk-dropdown li a:hover {
-  background-color: #18bcbc;
-  color: #ffffff;
-}
-#menus .uk-modal-dialog .uk-dropdown.uk-dropdown-bottom {
-  padding: 10px 15px;
-  margin: -5px 0 0 50px;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
-}
-#menus .uk-modal-dialog .uk-grid-divider:not(:empty) {
-  padding: 0;
-  margin: 10px auto;
-}
-#menus .uk-modal-dialog .uk-grid-divider .line-padd {
-  padding: 0;
-  text-align: center;
-}
 /*---- ALERT ----*/
 #message,
 #err_message {
@@ -469,12 +426,81 @@ button.small {
   line-height: 16px;
   font-size: 12px;
 }
+#menus .uk-modal-dialog .uk-button-dropdown,
+#mypage .uk-modal-dialog .uk-button-dropdown {
+  width: 100%;
+}
+#menus .uk-modal-dialog .menu-btn,
+#mypage .uk-modal-dialog .menu-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#menus .uk-modal-dialog .menu-btn a,
+#mypage .uk-modal-dialog .menu-btn a {
+  color: #ffffff;
+}
+#menus .uk-modal-dialog .menu-btn i.uk-icon-caret-down,
+#mypage .uk-modal-dialog .menu-btn i.uk-icon-caret-down {
+  float: right;
+  padding-top: 6px;
+}
+#menus .uk-modal-dialog .admin,
+#mypage .uk-modal-dialog .admin {
+  background-color: #2660a3;
+  border-color: #2660a3;
+}
+#menus .uk-modal-dialog .uk-dropdown,
+#mypage .uk-modal-dialog .uk-dropdown {
+  border: 1px solid #18bcbc;
+  margin-left: 20px;
+}
+#menus .uk-modal-dialog .uk-dropdown li a,
+#mypage .uk-modal-dialog .uk-dropdown li a {
+  font-weight: bold;
+  padding: 10px 0 10px 15px;
+  color: #069b9b;
+  text-shadow: none;
+}
+#menus .uk-modal-dialog .uk-dropdown li a:hover,
+#mypage .uk-modal-dialog .uk-dropdown li a:hover {
+  background-color: #18bcbc;
+  color: #ffffff;
+}
+#menus .uk-modal-dialog .uk-dropdown.uk-dropdown-bottom,
+#mypage .uk-modal-dialog .uk-dropdown.uk-dropdown-bottom {
+  padding: 10px 15px;
+  margin: -5px 0 0 50px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+#menus .uk-modal-dialog .uk-grid-divider:not(:empty),
+#mypage .uk-modal-dialog .uk-grid-divider:not(:empty) {
+  padding: 0;
+  margin: 10px auto;
+}
+#menus .uk-modal-dialog .uk-grid-divider .line-padd,
+#mypage .uk-modal-dialog .uk-grid-divider .line-padd {
+  padding: 0;
+  text-align: center;
+}
 /* Navi */
-navi {
+nav.uk-navbar {
   border-radius: 0px;
 }
+.navbar-logo {
+  float: left;
+  padding: 0;
+  margin-left: 10px;
+}
 img#logo {
-  padding-top: 15px;
+  margin: 0;
+}
+.staff-data {
+  float: left;
+  margin-left: 10px;
+  padding-top: 7px;
+  font-size: 0.85em;
+  line-height: 1.3;
 }
 .navi-text,
 a.navi-text,
@@ -482,11 +508,56 @@ a.navi-text:hover,
 a.navi-text:active {
   color: #ffffff;
 }
+.uk-navbar-toggle {
+  font-size: 18px;
+}
+/* Modal */
+#menus .uk-modal-dialog .menu-btn .admin,
+#mypage .uk-modal-dialog .menu-btn .admin {
+  background-color: #2660a3;
+}
 /* Content */
 .container {
-  width: 100%;
-  margin: 75px 10px 15px;
+  margin: 85px 10px 15px 10px;
 }
-.container #main-panel {
-  margin: 0 20px 0 0;
+#admin_message {
+  margin-bottom: 15px;
+}
+/* Pagenation */
+.uk-pagination li i {
+  font-size: 1.4rem;
+}
+ul#admin_menu {
+  width: 100%;
+}
+ul#admin_menu li {
+  width: 100%;
+  margin: 5px 0;
+}
+ul.uk-nav-sub li.navsub {
+  margin-left: 20px;
+}
+/* tabel */
+#access_table th,
+#access_table td {
+  width: 25%;
+}
+/* flexigrid */
+.flexigrid th,
+.flexigrid td {
+  font-size: 1em;
+}
+.flexigrid div.pDiv input,
+.flexigrid div.sDiv2 input {
+  border: none;
+  color: #000000;
+}
+.flexigrid div.fbutton .add {
+  background: url(images/add.png) no-repeat center left;
+}
+.flexigrid div.fbutton .delete {
+  background: url(images/close.png) no-repeat center left;
+}
+.flexigrid div.fbutton .edit {
+  background: url(images/edit.png) no-repeat center left;
 }

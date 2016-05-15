@@ -7,7 +7,7 @@
 		<?=Html::meta('robots', "no-cache");?>
 		<?=Html::meta('keywords', _KEYWORD);?>
 		<?=Html::meta('description', _DESC);?>
-		<title>デジタル書籍出版サービス' | ののべる.jp</title>
+		<title><?=$page_title?> | ののべる管理システム</title>
 		<link rel="shortcut icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="57x57" href="<?=Asset::find_file('apple-icon-57x57.png', 'img','icons/');?>">
@@ -31,10 +31,9 @@
 		<?=Asset::css('//fonts.googleapis.com/css?family=Roboto:400,300');?>
 		<!-- CSS -->
 		<?=Asset::css('uikit.almost-flat.min.css');?>
-		<?=Asset::css('components-almost-flat/tooltip.almost-flat.min.css');?>
 		<?=Asset::css('style_admin.css');?>
 		<!-- JAVASCRIPT -->
-		<?=Asset::js('jquery.js');?>
+		<?=Asset::js('jquery-1.12.3.min.js');?>
 		<?=Asset::js('uikit.min.js');?>
 		<?=Asset::js('components/grid.min.js');?>
 		<?=Asset::js('script.js');?>
@@ -51,6 +50,14 @@
 		<!-- END HEAD NAVI -->
 		<!-- CONTAINER -->
 		<div class="container">
+				<!-- エラー表示 -->
+        <? if (!empty($err_message)) { ?>
+            <div class="uk-alert uk-alert-danger uk-text-left" id="err_message">
+              <ul>
+                <li><?=$err_message?></li>
+              </ul>
+            </div>
+        <? } ?>
 			<!-- CONTENT -->
 			<div id="main-grid">
 				<?php echo $content; ?>

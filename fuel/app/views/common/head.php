@@ -28,14 +28,14 @@
 <?=Asset::css('//fonts.googleapis.com/css?family=Roboto:400,300');?>
 <!-- CSS -->
 <?=Asset::css('uikit.almost-flat.min.css');?>
-<?=Asset::css('components-almost-flat/tooltip.almost-flat.min.css');?>
-<?=Asset::css('chewing-grid/chewing-grid-atomic.min.css');?>
+<!-- <?=Asset::css('components-almost-flat/tooltip.almost-flat.min.css');?> -->
+<!-- <?=Asset::css('chewing-grid/chewing-grid-atomic.min.css');?> -->
 <?=Asset::css('style.css');?>
 <!-- JAVASCRIPT -->
 <?=Asset::js('jquery.js');?>
 <?=Asset::js('uikit.min.js');?>
 <?=Asset::js('components/grid.min.js');?>
-<?=Asset::js('jquery.bottom-1.0.js');?>
+<!-- <?=Asset::js('jquery.bottom-1.0.js');?> -->
 <?=Asset::js('script.js');?>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

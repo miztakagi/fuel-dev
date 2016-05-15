@@ -6,7 +6,7 @@ class Controller_Index extends Controller
 		parent::before();
 
 		// ログインチェック
-		if(Auth::check() && Auth::get('active')>0 && !empty(Session::get("login_hash")) && Security::check_token()) {
+		if(Auth::check() && Auth::get('active')>0 && !empty(Session::get("login_hash"))) {
 			$this->login    = 1;
 			$this->username = Auth::get_screen_name();
 			$this->email   = Auth::get('email');
@@ -20,7 +20,11 @@ class Controller_Index extends Controller
 			$this->userid   = null;
 		}
 		// Common::_log(Cookie::get(), 'COOKIE');
-		Common::_log(Session::get(), 'SESSION');
+		// Common::_log(Session::get(), 'SESSION');
+		// adminの場合
+		if(Auth::get('group') >= 50){
+			Session::set('admin', true);
+		}
 	}
 
 	// TOPページ
@@ -76,11 +80,10 @@ class Controller_Index extends Controller
 				$auth = Auth::instance();
 				$passwd = $password."//".$email;
 				if ($auth->login($email, $passwd)) {
-					if (Input::post('remember', 1)) {
-		          $auth->remember_me(); // remember-me クッキーを作成
+					if (Input::post('rememberme', 1)) {
+							Cookie::set('email', $email, 60 * 60 * 24 * 90);
 		      } else {
-		          //$auth->dont_remember_me(); // 存在する場合、 remember-me クッキーを削除
-		          $auth->remember_me(); // remember-me クッキーを作成
+		          Cookie::delete('email');
 		      }
 					$userid  = $auth->get('id');
 					$active  = $auth->get('active');
@@ -147,7 +150,8 @@ class Controller_Index extends Controller
 		$auth->logout();$auth->logout();
 		$tmp['modal'] = null;
 		$tmp['message'] = 'ログアウトしました。';
-		Session::destroy();
+		//Session::destroy();
+		Session::delete('admin');
 		return Request::forge('index')->execute(array('res'=>$tmp))->response();
 	}
 

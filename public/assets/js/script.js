@@ -24,16 +24,16 @@ $(function(){
         //console.log("縦で見ている"); 
     }
     var winWidth = $(window).width();
-    var imgNum = Math.ceil( Math.random()*4);
+    //var imgNum = Math.ceil( Math.random()*4); // ロゴrandom表示の場合
     // @media分岐
     if(winWidth < 480){ // スマホ縦
-      $("#logo").attr({ "src":"./assets/img/logo/logo_bell.svg", "width":"40", "height":"40"});
+      $("#logo").attr({ "src":"/assets/img/logo/logo_bell.png", "width":"40", "height":"40"});
       $("#main").css("margin", "110px auto 25px auto");
     } else if(winWidth <= 600){ // スマホ横 
-      $("#logo").attr({"src":"./assets/img/logo/logo_bell.svg", "width":"40", "height":"40"});
+      $("#logo").attr({"src":"/assets/img/logo/logo_bell.png", "width":"40", "height":"40"});
       $("#main").css("margin", "70px auto 25px auto");
     } else if(winWidth <= 768){ // タブレット 
-      $("#logo").attr({"src":"./assets/img/logo/logo_190_40.svg", "width":"190", "height":"40"});
+      $("#logo").attr({"src":"/assets/img/logo/logo_190_40.png", "width":"190", "height":"40"});
       $("#main").css("margin", "70px auto 25px auto");
     } else { // PC
       //$("#logo").attr({"src":"./assets/img/logo/logo_190_40.svg", "width":"190", "height":"40"});
@@ -96,6 +96,13 @@ $(function(){
 
   // メッセージしばらくしたら消す
   $("#message, #err_message").delay(5000).slideUp(200);
+
+  $("button").on("click", function(){
+    //alert($(this).data('href'));
+    if($(this).data('href') !== undefined){
+      location.href = $(this).data('href');
+    }
+  });
 
 });
 

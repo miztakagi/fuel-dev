@@ -1,39 +1,72 @@
-<!-- LEFT CONTENT -->
-<div class="uk-panel uk-panel-box" id="main-panel">
-	<div class="row">
-		<h3><?php echo Session::get_flash('success','ユーザー一覧', array('class'=>'uk-panel-title'));?></h3>
-	</div>
-	<div class="row">
-		<div class="span8"></div>
-	</div>
-	<div class="row">
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>ユーザ名</th>
-					<th class="sp_none">グループ</th>
-					<th>Eメール</th>
-					<th class="sp_none">最終ログイン</th>
-					<th class="sp_none">作成日</th>
-					<th class="sp_none">更新日</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach($users as $row): ?>
-				<tr>
-					<td><?=$row->id?></td>
-					<td><?php echo Html::anchor('adimin/edit/'.$row->id,$row->username);?></td>
-					<th class="sp_none"><?=$row->group?></th>
-					<th><?=$row->email?></th>
-					<th class="sp_none"><?=$row->last_login?></th>
-					<td class="sp_none"><?=$row->created_at?></td>
-					<td class="sp_none"><?=$row->updated_at?></td>
-				</tr>
-				<?php endforeach;?>
-			</tbody>
-		</table>
-		<?php echo Pagination::create_links();?>
-	</div>
+<!-- MAIN CONTENT -->
+<div class="uk-grid">
+    <div class="uk-width-1-1 uk-flex uk-grid-small uk-flex-center" id="admin_menu">
+            <div><button class="uk-button" type="button" data-href="/admin/userlist">ユーザ管理</button></div>
+            <div><button class="uk-button" type="button" data-href="/admin/itemdivst">作品管理</button></div>
+            <div><button class="uk-button" type="button" data-href="/admin/manage">入出金管理</button></div>
+            <div><button class="uk-button" type="button" data-href="/admin/info">お知らせ管理</button></div>
+            <div><button class="uk-button" type="button" data-href="/admin/access">アクセス管理</button></div>
+    </div>
+    <div class="uk-width-1-1 uk-flex uk-grid-small uk-flex-center" id="admin_menu">
+            <div><button class="uk-button" type="button" data-href="/index">ユーザTOP</button></div>
+            <div><button class="uk-button" type="button" data-href="/logout">ログアウト</button></div>
+    </div>
 </div>
-<!-- END LEFT CONTENT -->
+
+<div class="uk-grid">
+    <div class="uk-width-2-3 uk-grid-small uk-flex uk-align-center">
+        <div class="uk-width-1-2"><?=Asset::img('admin/lovelive01.gif', array('alt'=>'lovelive01','style'=>'margin:0 1%;border-radius:4px;'));?></div>
+        <div class="uk-width-1-2"><?=Asset::img('admin/lovelive02.gif', array('alt'=>'lovelive02','style'=>'margin:0 1%;border-radius:4px;'));?></div>
+    </div>
+</div>
+
+<div class="uk-grid">
+    <div class="uk-width-2-3 uk-align-center">
+        <div class="uk-overflow-container">
+            <table class="uk-table uk-table-hover uk-table-condensed" id="access_table">
+                <thead>
+                    <tr>
+                        <th class="uk-text-center">期間</th>
+                        <th>アクセス数</th>
+                        <th>ユーザ数</th>
+                        <th>作品数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="uk-text-center">今日</th>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th class="uk-text-center">週間</th>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th class="uk-text-center">月間</th>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th class="uk-text-center">総数</th>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="uk-grid">
+    <div class="uk-width-2-3 uk-grid-small uk-flex uk-align-center">
+        <div class="uk-width-1-2"><?=Asset::img('admin/ufo01.gif', array('alt'=>'lovelive01','style'=>'margin:0 1%;border-radius:4px;'));?></div>
+        <div class="uk-width-1-2"><?=Asset::img('admin/ufo02.gif', array('alt'=>'lovelive02','style'=>'margin:0 1%;border-radius:4px;'));?></div>
+    </div>
+</div>
+<!-- END MAIN CONTENT

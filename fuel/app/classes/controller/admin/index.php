@@ -9,28 +9,28 @@ class Controller_Admin_Index extends Controller_Template{
 		parent::before();
 		//ログインしていなければ
 		if(!Auth::check()){
-Common::dump(Auth::get('active'));
 			//ログインページへ移動
-			Response::redirect('admin/login');
+			Response::redirect('login');
 		//ログインしていてもAdminでなければ
 		}elseif(Auth::get('group')<50){
-Common::dump(Auth::get('group'));
 			//user/indexページへ移動
 			Response::redirect('index');
 		}
+		$is_admin = (!empty(Session::get('admin'))) ? Session::get('admin') : false;
 	}
 
 	//トップページの表示
-	public function action_index()
+	public function action_index($page=0)
 	{
 		$data = array();
-		$data['username']   = Auth::get_screen_name();
+		$data['username']   = Session::get('username');
+		$data['page_title']   = '管理メニュー';
 		// create the layout view
 		$view = View::forge('template/admin');
     $view->set('navi',View::forge('admin/navi'));
     $view->set('content',View::forge('admin/index'));
     $view->set_global($data);
-    $view->set_global(Model_Admin::pagedata());
+    $view->set_global(Model_Admin::pagedata(3,$page));
     return $view;
 	}
 

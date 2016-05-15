@@ -1,6 +1,6 @@
 <?php
 return array(
-			//'_root_'              => 'index',  // The default route
+			'top'              			=> 'index',
 			'_root_'                => 'index',
 			'_404_'                 => 'index/error',    // The main 404 route
 			'welcome'               => 'welcome/index',  // The default route
@@ -12,8 +12,8 @@ return array(
 			'resetmail'             => 'index/resetmail',
 			'resetcode'             => 'index/resetcode',
 			'resetpass'             => 'index/resetpass',
-			'logout'                => 'index/logout',
-			'admin'                 => 'admin/index',
+			'logout'                => '/index/logout',
+			'admin'    							=> '/admin/index',
 			'member'                => 'member',
 			'blog'                  => 'blog/index',
 			'about'                 => 'site/about',

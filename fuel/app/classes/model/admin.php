@@ -59,17 +59,17 @@ class Model_Admin extends \Orm\Model{
 	}
 
 	//ページデータの取得
-	public static function pagedata($lines = 10){
+	public static function pagedata($limit=10, $offset=0, $sort='desc'){
 		//配列の初期化
 		$data = array();
 		//データ件数の取得
 		$count = Model_Users::count();
 		//Paginationの環境設定
 		$config = array(
-			'pagination_url'          => 'admin/index',
+			'pagination_url'          => '/admin/index',
 			'uri_segment'             => 3,
 			'num_links'               => 2,
-			'per_page'                => $lines,
+			'per_page'                => $limit,
 			'total_items'             => $count,
 			'template'                => array(
 				'wrapper_start'           => '<div class="pagination"><ul>',
@@ -85,7 +85,10 @@ class Model_Admin extends \Orm\Model{
 				'active_start'            => '<li class="active"><a href="#">',
 				'active_end'              => '</a></li>',
 			)
-		); 
+		);
+		//Common::_log($limit,'LIMIT');
+		//Common::_log($offset,'offset');
+
 		//Paginationのセット
 		Pagination::set_config($config);
 		//ページデータの取得
@@ -93,10 +96,10 @@ class Model_Admin extends \Orm\Model{
 		$data['users'] = Model_Users::find('all',
 			array(
 		    'order_by' => array(
-		        'updated_at' => 'DESC'
+		        'updated_at' => $sort
 		    ),
-		    'limit' => 10,
-		    'offset' => 0,
+		    'limit' => $limit,
+		    'offset' => $offset,
 			)
 		);
 
