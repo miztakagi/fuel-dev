@@ -1,3 +1,4 @@
+<!-- HEAD NAVI -->
 <nav class="uk-navbar uk-clearfix">
     <a class="navbar-logo" href="/admin">
         <?=Asset::img('logo/logo_190_40.png', array('id'=>'logo', 'class'=>'logo'));?>
@@ -56,4 +57,4 @@
             </li>
         </ul>
     </div>
-</div>
+</div><!-- END HEAD NAVI -->

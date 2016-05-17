@@ -16,7 +16,7 @@
         <li><a class="icon" href="https://nonovel.backlog.jp/projects/FUEL" target="_blank"><i class="fa fa-beer"></i> BACKLOG</a></li>
       </ul>
       <div class="uk-panel">
-        <p>&copy; 2016 - <?=date("Y")?> nonovel.jp all right reserverd. / poduced by creative mews inc.</p>
+        <p>&copy; 2016 - <?=date("Y")?> <a href="https://nonovel.jp">nonovel.jp</a> all right reserverd. / poduced by <a href="https://mews.miz.cc" target="_blank">creative mews inc.</a></p>
       </div>
     </div>
   </section>

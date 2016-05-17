@@ -69,4 +69,4 @@
         <div class="uk-width-1-2"><?=Asset::img('admin/ufo02.gif', array('alt'=>'lovelive02','style'=>'margin:0 1%;border-radius:4px;'));?></div>
     </div>
 </div>
-<!-- END MAIN CONTENT
+<!-- END MAIN CONTENT -->

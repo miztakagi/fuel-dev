@@ -7,7 +7,7 @@
 		<?=Html::meta('robots', "no-cache");?>
 		<?=Html::meta('keywords', _KEYWORD);?>
 		<?=Html::meta('description', _DESC);?>
-		<title>デジタル書籍出版サービス' | ののべる.jp</title>
+		<title><? echo (empty($page_title))?'デジタル書籍出版サービス | ののべる.jp':$page_title; ?></title>
 		<link rel="shortcut icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="57x57" href="<?=Asset::find_file('apple-icon-57x57.png', 'img','icons/');?>">

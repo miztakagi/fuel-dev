@@ -1,0 +1,62 @@
+/* MYPAGE */
+.container {
+  margin: 0;
+}
+#item-upload-form {
+  margin: 25px 0;
+}
+#item-tab-innner {
+  border: 1px solid #ddd;
+  border-left: 0px;
+  border-radius: 0 4px 4px 0;
+  padding: 10px 10px 10px 20px;
+}
+#item-tab-innner input {
+  width: 80%;
+  margin: 5px 5px 5px 0;
+}
+#item-tab-innner input.short {
+  margin-left: 4px;
+  width: 54%;
+}
+#item-tab-innner select {
+  margin: 5px 5px 5px 0;
+}
+#item-tab-innner span {
+  font-size: 0.85rem;
+}
+#item-tab-innner span.req {
+  color: #C00;
+}
+@media screen and (max-width: 540px) {
+  #item-tab-innner input {
+    width: 94%;
+  }
+  span.memo {
+    float: right !important;
+    margin-right: 10px !important;
+    margin-top: -5px !important;
+  }
+  input.short {
+    margin-left: 9px !important;
+    width: 94% !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  #item-tab-tab {
+    padding-left: 0;
+  }
+  #item-tab-innner {
+    border: 1px solid #ddd;
+    border-top: 0px;
+    border-radius: 0 0 4px 4px;
+  }
+  #item-upload-form {
+    margin-left: 25px;
+  }
+  span.memo {
+    float: none;
+    margin-right: 5px;
+    margin-top: 10px;
+  }
+}

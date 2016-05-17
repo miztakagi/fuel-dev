@@ -7,7 +7,7 @@
 		<?=Html::meta('robots', "no-cache");?>
 		<?=Html::meta('keywords', _KEYWORD);?>
 		<?=Html::meta('description', _DESC);?>
-		<title><?=$page_title?> | ののべる管理システム</title>
+		<title><? echo (empty($page_title))?'デジタル書籍出版サービス | ののべる.jp':$page_title; ?></title>
 		<link rel="shortcut icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="icon" href="<?=Asset::find_file('favicon.ico', 'img','icons/');?>" type="image/x-icon">
 		<link rel="apple-touch-icon" sizes="57x57" href="<?=Asset::find_file('apple-icon-57x57.png', 'img','icons/');?>">
@@ -31,12 +31,15 @@
 		<?=Asset::css('//fonts.googleapis.com/css?family=Roboto:400,300');?>
 		<!-- CSS -->
 		<?=Asset::css('uikit.almost-flat.min.css');?>
-		<?=Asset::css('style_admin.css');?>
+		<?=Asset::css('chewing-grid/chewing-grid-atomic.min.css');?>
+		<?=Asset::css('style_mypage.css');?>
 		<!-- JAVASCRIPT -->
 		<?=Asset::js('jquery-1.12.3.min.js');?>
 		<?=Asset::js('uikit.min.js');?>
 		<?=Asset::js('components/grid.min.js');?>
+		<?=Asset::js('jquery.cookie.js');?>
 		<?=Asset::js('script.js');?>
+		<?=Asset::js('script_mypage.js');?>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -46,45 +49,15 @@
 	</head>
 	<body>
 		<?php echo $navi; ?>
+		<?php echo $modal; ?>
 		<!-- CONTAINER -->
 		<div class="container">
-				<!-- エラー表示 -->
-        <? if (!empty($err_message)) { ?>
-            <div class="uk-alert uk-alert-danger uk-text-left" id="err_message">
-              <ul>
-                <li><?=$err_message?></li>
-              </ul>
-            </div>
-        <? } ?>
-			<!-- CONTENT -->
-			<div id="main-grid">
+			<!-- MAIN -->
+			<div id="main">
+				<?php echo $mypage_menu; ?>
 				<?php echo $content; ?>
-			</div><!-- END CONTENT -->
+			</div><!-- END MAIN -->
 		</div><!-- END CONTAINER -->
-
-	  <!-- FOOTER -->
-	  <div id="footer-border" style="display:block;">
-	    <a class="icon-center uk-icon-arrow-down"></a>
-	  </div>
-	  <section class="uk-footer" id="foot" style="display:none;">
-	    <button type="button" class="uk-close uk-close-alt" id="footer-close"></button>
-	    <div class="uk-container uk-container-center uk-text-center">
-	      <ul class="uk-subnav uk-subnav-line uk-flex-center">
-	        <li><a href="https://laravel.com/docs/5.2/blade" target="_blank">laravel 5.2</a></li>
-	        <li><a href="http://getuikit.com/docs/core.html" target="_blank">UIKit</a></li>
-	        <li><a href="http://php.net/manual/ja/ref.array.php" target="_blank">PHP</a></li>
-	        <li><a href="http://www.colorhexa.com/00d4d4" target="_blank">COLOR</a></li>
-	      </ul>
-	      <ul class="uk-subnav uk-subnav-line uk-flex-center">
-	        <li><a class="icon" href="http://getuikit.com/docs/icon.html" target="_blank"><i class="fa fa-adjust"></i>ICON</a></li>
-	        <li><a class="icon" href="https://nonovel.backlog.jp/projects/FUEL" target="_blank"><i class="fa fa-beer"></i> BACKLOG</a></li>
-	      </ul>
-	      <div class="uk-panel">
-	        <p>&copy; 2016 - <?=date("Y")?> nonovel.jp all right reserverd. / poduced by <a href="https://mews.miz.cc" target="_blank">creative mews inc.</a></p>
-	      </div>
-	    </div>
-	  </section>
-	  <!-- END FOOTER -->
-
+	  <?php echo $footer; ?>
 	</body>
 </html>

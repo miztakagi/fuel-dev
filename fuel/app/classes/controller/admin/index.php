@@ -30,7 +30,7 @@ class Controller_Admin_Index extends Controller_Template{
     $view->set('navi',View::forge('admin/navi'));
     $view->set('content',View::forge('admin/index'));
     $view->set_global($data);
-    $view->set_global(Model_Admin::pagedata(3,$page));
+    //$view->set_global(Model_Admin::pagedata(3,$page));
     return $view;
 	}
 

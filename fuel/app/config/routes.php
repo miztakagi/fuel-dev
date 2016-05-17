@@ -1,27 +1,23 @@
 <?php
 return array(
-			'top'              			=> 'index',
-			'_root_'                => 'index',
-			'_404_'                 => 'index/error',    // The main 404 route
-			'welcome'               => 'welcome/index',  // The default route
-			'login'                 => 'index/login',
-			'regist'                => 'index/regist',
-			'registagain'           => 'index/registagain',
-			'registcheck'           => 'index/registcheck',
-			'registcode'            => 'index/registcode',
-			'resetmail'             => 'index/resetmail',
-			'resetcode'             => 'index/resetcode',
-			'resetpass'             => 'index/resetpass',
-			'logout'                => '/index/logout',
-			'admin'    							=> '/admin/index',
-			'member'                => 'member',
-			'blog'                  => 'blog/index',
-			'about'                 => 'site/about',
-			'contact'               => 'contact/form',
-			'(:num)/about'          => 'site/about/$1', // Routes /12/about to /site/about/12
-			'blog/:year/:month/:id' => 'blog/entry', // Routes /blog/2010/11/entry_name to /blog/entry
-			
-			'hello(/:name)?'        => array('welcome/hello', 'name' => 'hello'),
+			'_root_'       => 'index',
+			'_404_'        => 'index/error',    // The main 404 route
+			'top'          => 'index',
+			'login'        => 'index/login',
+			'regist'       => 'index/regist',
+			'registagain'  => 'index/registagain',
+			'registcheck'  => 'index/registcheck',
+			'registcode'   => 'index/registcode',
+			'resetmail'    => 'index/resetmail',
+			'resetcode'    => 'index/resetcode',
+			'resetpass'    => 'index/resetpass',
+			'logout'       => '/index/logout',
+			'admin'        => '/admin/index',
+			'mypage'       => 'member/index',
+			'mypage/:page' => 'member/index',
+			'blog'         => 'blog/index',
+			'about'        => 'site/about',
+			'contact'      => 'contact/form',
 			
 			'stuff'                 => function () {
 			// this route only works in development

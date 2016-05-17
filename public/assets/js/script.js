@@ -28,16 +28,19 @@ $(function(){
     // @media分岐
     if(winWidth < 480){ // スマホ縦
       $("#logo").attr({ "src":"/assets/img/logo/logo_bell.png", "width":"40", "height":"40"});
-      $("#main").css("margin", "110px auto 25px auto");
     } else if(winWidth <= 600){ // スマホ横 
       $("#logo").attr({"src":"/assets/img/logo/logo_bell.png", "width":"40", "height":"40"});
-      $("#main").css("margin", "70px auto 25px auto");
     } else if(winWidth <= 768){ // タブレット 
       $("#logo").attr({"src":"/assets/img/logo/logo_190_40.png", "width":"190", "height":"40"});
-      $("#main").css("margin", "70px auto 25px auto");
     } else { // PC
       //$("#logo").attr({"src":"./assets/img/logo/logo_190_40.svg", "width":"190", "height":"40"});
-      $("#main").css("margin", "70px auto 25px auto");
+    }
+    if( $("#navi-height").height() > 64 ){
+      $("#main").css("margin", "122px 20px 25px 10px");
+      $(".uk-navbar-flip").css("margin-top", "5px");
+    }else{
+      $("#main").css("margin", "77px 20px 25px 10px");
+      $(".uk-navbar-flip").css("margin-top", "-5px");
     }
   });
 

@@ -182,7 +182,7 @@
           </tr>
           <tr>
             <td class="noborder">
-              <?=Form::label('ログインを継続する', 'rememberme')?><?=Form::checkbox('rememberme', 1, true)?>
+              <?=Form::label('メールアドレスを保持する', 'rememberme')?><?=Form::checkbox('rememberme', 1, true)?>
             </td>
           </tr>
           <tr>
@@ -353,7 +353,7 @@
             <button class="uk-button uk-button-large menu-btn"><i class="uk-icon-bookmark"></i> 読む・探す <i class="uk-icon-caret-down"></i></button>
             <div style="top: 30px; left: 0px;" class="uk-dropdown uk-dropdown-bottom dropdown-inner">
                 <ul class="uk-nav uk-nav-dropdown uk-dropdown-close">
-                    <li><a href="{{ url('welcome') }}" class="uk-icon-coffee"> ようこそ</a></li>
+                    <li><a href="mypage" class="uk-icon-coffee"> ようこそ</a></li>
                     <li><a href="#" class="uk-icon-commenting"> 評価する</a></li>
                     <li><a href="#" class="uk-icon-book"> 購読履歴</a></li>
                 </ul>
@@ -365,8 +365,8 @@
             <button class="uk-button uk-button-large menu-btn"><i class="uk-icon-pencil"></i> 創る・売る <i class="uk-icon-caret-down"></i></button>
             <div style="top: 30px; left: 0px;" class="uk-dropdown uk-dropdown-bottom dropdown-inner">
                 <ul class="uk-nav uk-nav-dropdown uk-dropdown-close">
-                    <li><a href="#" class="uk-icon-leaf"> はじめに</a></li>
-                    <li><a href="#" class="uk-icon-cloud-upload"> 作品登録</a></li>
+                    <li><a href="/mypage" class="uk-icon-leaf"> はじめに</a></li>
+                    <li><a href="/mypage/itemregist" class="uk-icon-cloud-upload"> 作品登録</a></li>
                     <li><a href="#" class="uk-icon-bar-chart"> 作品管理</a></li>
                     <li><a href="#" class="uk-icon-paypal"> 入出金管理</a></li>
                 </ul>
@@ -380,7 +380,7 @@
                 <ul class="uk-nav uk-nav-dropdown uk-dropdown-close">
                     <li><a href="#" class="uk-icon-leaf"> ユーザ情報の変更</a></li>
                     <li><a href="#" class="uk-icon-cloud-upload"> パスワードの変更</a></li>
-                    <li><a href="#" class="uk-icon-paypal"> ユーザ登録の抹消</a></li>
+                    <li><a href="#" class="uk-icon-user-times"> ユーザ登録の抹消</a></li>
                 </ul>
             </div>
         </div>

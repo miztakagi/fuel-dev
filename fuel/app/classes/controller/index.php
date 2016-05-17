@@ -9,7 +9,7 @@ class Controller_Index extends Controller
 		if(Auth::check() && Auth::get('active')>0 && !empty(Session::get("login_hash"))) {
 			$this->login    = 1;
 			$this->username = Auth::get_screen_name();
-			$this->email   = Auth::get('email');
+			$this->email    = Auth::get('email');
 			$this->userid   = Arr::get(Auth::get_user_id(), 1);
 			Session::set('username', Auth::get_screen_name());
 			Session::set('email', Auth::get('email'));
@@ -120,7 +120,7 @@ class Controller_Index extends Controller
 			}
 		} else {
 			$tmp['modal'] = 'login';
-      $errors[] = 'メールアドレスまたはパスワードが入力されていません。';
+      $errors[] = 'メールアドレス・パスワードが入力されていないか、タイムアウトしました。';
 		}
 		$tmp['errors'] = $errors;
     return Request::forge('index')->execute(array('res'=>$tmp))->response();
@@ -158,7 +158,7 @@ class Controller_Index extends Controller
 	// 不正なページアクセス
 	public function action_timeout()
 	{
-		$tmp['err_message'] = '有効期限が切れました。';
+		$tmp['err_message'] = 'タイムアウトしました。再度ログインして下さい。';
 		return $this->action_index($tmp);
 	}
 
